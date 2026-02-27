@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}"></link>
+</head>
+<body>
+Привет, Логойск!
+
+
+  <form id="feedback-form" data-url="{{ url_for('api.get_feedback') }}" method="post">
+      <label for="name">Имя и фамилия</label>
+    <input id="name" type="text" name="name" placeholder="Введите имя и фамилию" required>
+      <label for="phone">Телефон (+375 ХХ ХХХХХХХ)</label>
+    <input type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
+      <label for="phone">Email</label>
+    <input type="email" name="email" id="email" placeholder="Ваша электронная почта">
+      <label for="subject">Тема</label>
+    <input type="text" id="subject" name="subject" placeholder="Тема сообщения (необязательно)">
+      <label for="message">Сообщение</label>
+    <textarea name="message" id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
+      <label class="agreement-wrapper">
+          <input type="checkbox" id="agreement" name="agreement" class="agreement" required>
+          <span class="agreem">Я даю согласие на обработку персональных данных в соответствии с <a href="{{ url_for('main.get_privacy') }}#personal-data" target="_blank" class="agree" rel="noopener">Политикой обработки персональных данных</a></span></label>
+      <div id="response-message-error_feedback" style="color:red;"></div>
+    <button type="submit" class="send-btn">Отправить</button>
+  </form>
+
+<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+</body>
+</html>
