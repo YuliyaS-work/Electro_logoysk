@@ -28,7 +28,7 @@ def create_app(config_class=None):
     from electro.api.routers import api_bp
 
     app.register_blueprint(main_bp)
-    app.register_blueprint(api_bp, url_prefix='/api')
+    app.register_blueprint(api_bp)
 
     csrf.exempt(api_bp)
 

@@ -6,6 +6,10 @@ main_bp = Blueprint('main', __name__)
 def get_main_page():
     return render_template('main_page.html')
 
+@main_bp.route('/contact')
+def get_contact():
+    return render_template('contact.html')
+
 @main_bp.route('/privacy')
 def get_privacy():
     return render_template('privacy.html')

@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}"></link>
 </head>
 <body>
 
 <!--Форма обратной связи-->
-  <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post">
+ <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post">
       <label for="name">Имя и фамилия</label>
     <input id="name" type="text" name="name" placeholder="Введите имя и фамилию" required>
       <label for="phone">Телефон (+375 ХХ ХХХХХХХ)</label>
@@ -27,5 +26,6 @@
   </form>
 
 <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+
 </body>
 </html>
