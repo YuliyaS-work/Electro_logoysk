@@ -1,0 +1,125 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { cursor: none !important; }
+:root {
+  /*стиль 1
+  --cream:   #f0ebe2;
+  --sand:    #e2d9cc;
+  --stone:   #c4b9aa;
+  --bark:    #7a6a58;
+  --earth:   #3d3128;
+  --black:   #353C3F;
+  --white:   #faf8f4;*/
+  /*стиль 2
+  --white:  #faf8f4;
+--cream:  #EDE8E1;
+--sand:   #D5D6D2;
+--stone:  #756867;
+--bark:   #FF8D3F;
+--earth:  #353C3F;
+--black:  #1a1f21;*/
+/*стиль 3
+--white:  #F4F4EF;
+--cream:  #F4F4EF;
+--sand:   #ACBEBE;
+--stone:  #8A9EA0;
+--bark:   #A01D26;
+--earth:  #20232A;
+--black: #353C3F;*/
+--white:  #faf8f4;   /* оставляем белый фон */
+--sand:   #D5D6D2;   /* Гравий — разделители, круги hero */
+--stone:  #756867;   /* Древесина — подписи, метки */
+--bark:   #FF8D3F;   /* Оранжевый — акценты, цены, стрелки */
+--earth:  #353C3F;   /* Грифель — основной текст */
+--black:  #353C3F;   /* Грифель — футер (светлее чем был) */
+  --serif:   'Playfair Display', Georgia, serif;
+  --sans:    'Jost', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  line-height: 1.6;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a { text-decoration: none; color: inherit; }
+em { font-style: italic; }
+
+/* ── CURSOR ── */
+.cur { position: fixed; pointer-events: none; z-index: 9999; }
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 52px;
+  mix-blend-mode: multiply;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  color: var(--black);
+}
+
+.nav-links {
+  display: flex;
+  gap: 44px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--black);
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--black);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.nav-contact {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--bark);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--sand);
+  border-top: 1px solid rgba(255,255,255,.05);
+  padding: 32px 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.f-logo { font-family: var(--serif); font-size: 14px; color: #333; letter-spacing: .1em; }
+.f-copy { font-size: 9px; letter-spacing: .22em; text-transform: uppercase; color: #2a2520; }
+.f-flinks { display: flex; gap: 28px; }
+.f-flinks a { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: #2a2520; transition: color .2s; }
+.f-flinks a:hover { color: #666; }

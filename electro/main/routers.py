@@ -14,6 +14,11 @@ def get_contact():
 def get_privacy():
     return render_template('privacy.html')
 
+@main_bp.route('/services')
+def get_services():
+    return render_template('services.html')
+
+
 # Для другого любого адреса место xxxx пишешь свои имена
 # @main_bp.route('/xxx')
 # def get_xxxxxxx_page():

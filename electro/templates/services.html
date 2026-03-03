@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+    {% block title %}Аренда техники{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
+{% endblock %}
+{% block content %}
+<div class="header">
+  <div class="header-line"></div>
+  <div>
+    <h1>Наши услуги</h1>
+    <p>Монтаж инженерных систем под ключ</p>
+  </div>
+</div>
+
+<section class="ser">
+
+  <div class="row row-1">
+    <div class="photo">
+      <img src="{{ url_for('static', filename='image/1avto.png') }}" alt="Мини-экскаватор SANY SY26U">
+    </div>
+    <div class="desc" data-num="01">
+      <span class="service-num">Услуга 01</span>
+      <h2>Мини-экскаватор SANY SY26U</h2>
+      <p class="desc-text">Аренда мини-экскаватора гусеничного SANY SY26U</p>
+      <a href="#" class="desc-cta">Узнать подробнее</a>
+    </div>
+  </div>
+
+  <div class="row row-2">
+    <div class="photo">
+        <img src="{{ url_for('static', filename='image/2avto.png') }}" alt="Мини-экскаватор Volvo EC 14">
+    </div>
+    <div class="desc" data-num="02">
+      <span class="service-num">Услуга 02</span>
+      <h2>Мини-экскаватор Volvo EC 14</h2>
+      <p class="desc-text">Аренда мини-экскаватора гусеничного Volvo EC 14</p>
+      <a href="#" class="desc-cta">Узнать подробнее</a>
+    </div>
+  </div>
+
+  <div class="row row-3">
+    <div class="photo">
+        <img src="{{ url_for('static', filename='image/3avto.png') }}" alt="Бурильно-крановая машина БМ-205Д">
+    </div>
+    <div class="desc" data-num="03">
+      <span class="service-num">Услуга 03</span>
+      <h2>Бурильно-крановая машина БМ-205Д</h2>
+      <p class="desc-text">Аренда бурильно-крановой машины БМ-205Д на базе трактора МТЗ82</p>
+      <a href="#" class="desc-cta">Узнать подробнее</a>
+    </div>
+  </div>
+
+  <div class="row row-4">
+    <div class="photo">
+        <img src="{{ url_for('static', filename='image/4avto.png') }}" alt="Кран-манипулятор МАЗ">
+    </div>
+    <div class="desc" data-num="04">
+      <span class="service-num">Услуга 04</span>
+      <h2>Кран-манипулятор МАЗ</h2>
+      <p class="desc-text">Аренда крана-манипулятора МАЗ с буром и люлькой</p>
+      <a href="#" class="desc-cta">Узнать подробнее</a>
+    </div>
+  </div>
+
+</section>
+
+<div class="bottom-bar">
+  <span>Работаем по всей Республике Беларусь</span>
+  <span>Звоните: <strong><a href="tel:+375296262485">+375 29 626-24-85</a></strong></span>
+</div>
+{% endblock %}
+{% block scripts %}
+{% endblock %}
