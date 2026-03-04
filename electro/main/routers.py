@@ -18,12 +18,6 @@ def get_privacy():
 def get_services():
     return render_template('services.html')
 
-
-# Для другого любого адреса место xxxx пишешь свои имена
-@main_bp.route('/services')
-def get_services():
-    return render_template('services.html')
-
 @main_bp.route('/proekt')
 def get_proekt():
     return render_template('proekt.html')
@@ -43,3 +37,11 @@ def get_water():
 @main_bp.route('/lab')
 def get_lab():
     return render_template('lab.html')
+
+@main_bp.route('/cookie')
+def get_cookie():
+    return render_template('cookie.html')
+
+@main_bp.route('/404')
+def get_404():
+    return render_template('404.html')

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+    {% block title %}ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ И ИСПОЛЬЗОВАНИЯ COOKIE Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/cookie.css') }}">
+{% endblock %}
+{% block content %}
+<section id="cookies" class="pay_section">
+    <h2 class="payments">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ И ИСПОЛЬЗОВАНИЯ COOKIE</h2>
+    <p class="point">Сайт <strong>Спецэнергострой ПРО</strong> использует cookie для корректной работы сайта, удобства пользователей и отображения встроенных сервисов.</p>
+<p class="point"><strong>Собственные cookie:</strong></p>
+    <ul class="coul">
+      <li class="ulli">cookieConsent: сохраняет согласие пользователя на использование cookie, функциональный, 1 месяц</li>
+      <li class="ulli">csrftoken: защищает формы от CSRF-атак, функциональный/технический, 12 месяцев</li>
+    </ul>
+    <p class="point"><strong>Сторонние cookie:</strong> сайт может использовать cookie сторонних сервисов, включая ООО «Яндекс», при использовании встроенных карт. Такие cookie необходимы для корректной работы сервиса.</p>
+        <p class="point"><strong>Согласие:</strong> баннер cookie используется для информирования пользователей. В случае использования аналитических или маркетинговых cookie пользователям будет предложено дать согласие на их обработку.</p>
+    <h3 class="doc">Используемые cookie и локальное хранилище</h3>
+    <table class="cook-table">
+      <thead>
+        <tr>
+          <th class="name_cook">Название</th>
+          <th class="name_cook">Назначение</th>
+          <th class="name_cook">Тип</th>
+          <th class="name_cook">Срок хранения</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item_cookie">cookieConsent</td>
+          <td class="item_cookie">Сохраняет согласие пользователя на использование cookie</td>
+          <td class="item_cookie">Функциональный</td>
+          <td class="item_cookie">1 месяц</td>
+        </tr>
+        <tr>
+          <td class="item_cookie">csrftoken</td>
+          <td class="item_cookie">Защищает формы от CSRF-атак</td>
+          <td class="item_cookie">Функциональный / Технический</td>
+          <td class="item_cookie">12 месяцев</td>
+        </tr>
+      <tr>
+        <td class="item_cookie">yandexuid, ymex</td>
+        <td class="item_cookie">Обеспечение работы Яндекс.Карт</td>
+        <td class="item_cookie">Сторонний</td>
+        <td class="item_cookie">до 1 года</td>
+      </tr>
+        <tr>
+          <td class="item_cookie">theme</td>
+          <td class="item_cookie">Сохраняет выбранную тему оформления (светлая/тёмная)</td>
+          <td class="item_cookie">LocalStorage</td>
+          <td class="item_cookie">До очистки браузера пользователем</td>
+        </tr>
+      </tbody>
+    </table>
+  <p class="point">Пользователь может управлять cookie через настройки браузера. Подробнее о параметрах управления файлами cookie можно ознакомиться на сайтах основных браузеров:</p>
+  <ul class="browser-list">
+  <li>
+    <a href="https://www.mozilla.org/ru/privacy/websites/?_gl=1%2A1wumxqd%2A_ga%2AODUxNDY3NTU3LjE3NjYwNTg3ODE.%2A_ga_2VC139B3XV%2AczE3NjYwNTg3ODEkbzEkZzEkdDE3NjYwNTg4NDckajYwJGwwJGgw#user-choices" target="_blank" rel="noopener">
+      <i class="fab fa-firefox" style="color: #666;"></i> Mozilla Firefox
+    </a>
+  </li>
+  <li>
+    <a href="https://support.google.com/chrome/answer/95647?hl=ru" target="_blank" rel="noopener">
+      <i class="fab fa-chrome" style="color: #666;"></i> Google Chrome
+    </a>
+  </li>
+  <li>
+    <a href="https://support.apple.com/ru-ru/guide/safari/sfri11471/mac" target="_blank" rel="noopener">
+      <i class="fab fa-safari" style="color: #666;"></i> Safari
+    </a>
+  </li>
+  <li>
+    <a href="https://help.opera.com/ru/latest/web-preferences/#cookies" target="_blank" rel="noopener">
+      <i class="fab fa-opera" style="color: #666;"></i> Opera
+    </a>
+  </li>
+  <li>
+    <a href="https://support.microsoft.com/ru-ru/help/4027947" target="_blank" rel="noopener">
+      <i class="fab fa-edge" style="color: #666;"></i> Microsoft Edge
+    </a>
+  </li>
+  <li>
+    <a href="https://support.microsoft.com/ru-ru/topic/%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-cookie-ad01aa7e-66c9-8ab2-7898-6652c100999d" target="_blank" rel="noopener">
+      <i class="fab fa-internet-explorer" style="color: #666;"></i> Internet Explorer</a>
+  </li>
+</ul>
+  <p class="point">Пользователь вправе в любой момент изменить или отозвать свое согласие
+на использование файлов cookie. Для этого вы можете воспользоваться
+настройками браузера, удалить ранее сохраненные cookie либо повторно
+вызвать баннер согласия на сайте. Некоторые браузеры позволяют посещать сайты в режиме «инкогнито», что ограничивает хранение информации и автоматически удаляет сессионные cookie.</p>
+</section>
+{% endblock %}
+{% block scripts %}
+
+{% endblock %}

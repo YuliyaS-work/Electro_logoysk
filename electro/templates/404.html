@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+    {% block title %}404 — Страница не найдена | Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+
+{% endblock %}
+{% block content %}
+<section class="page-404">
+
+  <!-- Разрыв линии -->
+  <div class="line-break" aria-hidden="true">
+    <div class="line-gap"></div>
+  </div>
+
+  <!-- Центральный блок -->
+  <div class="err-inner">
+    <p class="err-title">Страница не найдена</p>
+
+    <div class="err-code">4<span class="dot">0</span>4</div>
+
+    <div class="err-divider"></div>
+
+    <p class="err-sub">
+      Запрошенный адрес не существует или был перемещён.
+      Проверьте ссылку или вернитесь на главную страницу.
+    </p>
+
+    <a href="/" class="err-back">
+      <span class="err-arrow">
+        <span class="arr-line"></span>
+      </span>
+      На главную
+    </a>
+  </div>
+
+  <div class="err-coords" aria-hidden="true">
+    ERR / 404<br>
+    ELECTRO-LOGOYSK.BY
+  </div>
+  <div class="err-year" aria-hidden="true">
+    Спецэнергострой ПРО
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}{% endblock %}

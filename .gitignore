@@ -169,3 +169,4 @@ celerybeat-schedule.db
 
 # electric_logoysk
 .env
+.DS_Store
