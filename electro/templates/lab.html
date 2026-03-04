@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}Лаборатория — Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/proekt.css') }}">
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="des-hero reveal">
+  <div class="des-hero__inner">
+    <span class="des-hero__label">Услуги</span>
+    <h1 class="des-hero__title">Лаборатория</h1>
+    <p class="des-hero__sub">Электрофизические измерения, тепловизионное обследование,<br>проверка дымоходов и вентиляционных каналов, аэродинамические испытания по всей Беларуси</p>
+  </div>
+  <div class="des-hero__line"></div>
+</section>
+
+<!-- NAV TABS -->
+<nav class="des-tabs reveal">
+  <a href="#efi" class="des-tab des-tab--active">
+    <span class="des-tab__num">01</span>
+    <span class="des-tab__name">Электрофизические измерения</span>
+  </a>
+  <a href="#ventilation" class="des-tab">
+    <span class="des-tab__num">02</span>
+    <span class="des-tab__name">Вентиляция и дымовые каналы</span>
+  </a>
+  <a href="#thermal" class="des-tab">
+    <span class="des-tab__num">03</span>
+    <span class="des-tab__name">Тепловизионное обследование</span>
+  </a>
+</nav>
+
+<!-- SECTION 01 — ЭФИ -->
+<section id="efi" class="des-section reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">01</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Электрофизические<br>измерения в электроустановках</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body">
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/5.png') }}"
+           alt="Электрофизические измерения"
+           class="des-section__image">
+      <div class="des-section__image-caption">ЭФИ в электроустановках</div>
+    </div>
+
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Проводим электрофизические измерения и высоковольтные испытания в электроустановках по всей Беларуси. Компания и сотрудники имеют всю разрешительную документацию на проведение ЭФИ и высоковольтных испытаний.
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Измерение сопротивления изоляции в электроустановках</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Прогрузка автоматических выключателей</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Испытания цепи «фаза-нуль» в электроустановках до 1000 В с глухим заземлением нейтрали</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проверка и испытания УЗО (устройств защитного отключения)</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Измерение сопротивления заземляющих устройств и молниезащиты</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Измерение удельного сопротивления грунта</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Измерение напряжения прикосновения и шага в животноводческих помещениях</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проверка соединений заземлителей с измерением переходного сопротивления контактного соединения</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Испытания кабельных линий повышенным напряжением</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Испытания оборудования подстанций повышенным напряжением</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">Изоляция</span>
+        <span class="des-tag">Заземление</span>
+        <span class="des-tag">УЗО</span>
+        <span class="des-tag">Высоковольтные испытания</span>
+        <span class="des-tag">Кабельные линии</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 — ВЕНТИЛЯЦИЯ -->
+<section id="ventilation" class="des-section des-section--alt reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">02</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Проверка вентиляционных<br>и дымовых каналов</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body des-section__body--reverse">
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Проводим проверку вентиляционных и дымовых каналов в жилых и нежилых помещениях с выдачей акта о техническом состоянии каналов и протоколов испытаний. Выполняем аэродинамические испытания систем вентиляции и кондиционирования воздуха.
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проверка состояния вытяжной вентиляции: вытяжек, решёток и вентканалов</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Определение размеров вентиляционного и дымового канала, материалов изготовления</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проверка обособленности каналов, тяги и герметичности системы</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Аэродинамические испытания систем с искусственным (механическим) и естественным побуждением потока</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Измерение скорости и расхода воздуха, кратности воздухообмена</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Определение геометрических размеров воздуховодов и помещений</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">Дымовые каналы</span>
+        <span class="des-tag">Вентиляция</span>
+        <span class="des-tag">Аэродинамика</span>
+        <span class="des-tag">Протокол испытаний</span>
+      </div>
+    </div>
+
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/5.png') }}"
+           alt="Проверка вентиляционных каналов"
+           class="des-section__image">
+      <div class="des-section__image-caption">Аэродинамические испытания</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03 — ТЕПЛОВИЗОР -->
+<section id="thermal" class="des-section reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">03</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Тепловизионное<br>обследование</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body">
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/5.png') }}"
+           alt="Тепловизионное обследование"
+           class="des-section__image">
+      <div class="des-section__image-caption">Тепловизионный контроль</div>
+    </div>
+
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Выполняем тепловизионное обследование зданий и электрооборудования для выявления скрытых дефектов теплоизоляции, неисправностей систем отопления и мест нагрева электрических контактов.
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Выявление дефектов теплоизоляции стен и кровли, некачественного монтажа окон и дверей</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Обследование системы отопления и тёплого пола, определение мест укладки труб</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Обследование электрических щитов и распределительных устройств на предмет перегрева контактных соединений</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">Теплоизоляция</span>
+        <span class="des-tag">Отопление</span>
+        <span class="des-tag">Электрощиты</span>
+        <span class="des-tag">Тепловизор</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="des-cta reveal">
+  <div class="des-cta__inner">
+    <span class="des-cta__label">Заказать измерения</span>
+    <h2 class="des-cta__title">Нужна лабораторная проверка?</h2>
+    <p class="des-cta__text">Оставьте заявку — проконсультируем по составу работ, срокам и стоимости в течение рабочего дня</p>
+    <a href="{{ url_for('main.get_contact') }}#feedback-form" class="des-cta__btn">Оставить заявку</a>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/designing.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+    {% block title %}Газоснабжение — Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="elec-hero reveal">
+  <div class="elec-hero__left">
+    <span class="elec-hero__label">Услуги / Газоснабжение</span>
+    <h1 class="elec-hero__title">Газо-<br><em>снабжение</em></h1>
+  </div>
+  <div class="elec-hero__right">
+    <p class="elec-hero__lead">
+      Выполняем монтаж систем газоснабжения в индивидуальных жилых домах, административных и промышленных объектах — от прокладки газопровода до сдачи в газоснабжающей организации.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES LIST -->
+<section class="elec-services reveal">
+  <div class="elec-services__header">
+    <span class="elec-services__title">Виды работ</span>
+    <span class="elec-services__count">8 направлений</span>
+  </div>
+
+  <ul class="elec-list">
+    <li class="elec-list__item">
+      <span class="elec-list__num">01</span>
+      <span class="elec-list__text">Монтаж наружных и внутренних газопроводов низкого, среднего и высокого давления</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">02</span>
+      <span class="elec-list__text">Подключение газовых котлов, плит и другого газоиспользующего оборудования</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">03</span>
+      <span class="elec-list__text">Монтаж и замена приборов учёта природного газа (счётчиков)</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">04</span>
+      <span class="elec-list__text">Монтаж газорегуляторных пунктов (ГРП) и шкафных регуляторных пунктов (ШРП)</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">05</span>
+      <span class="elec-list__text">Газификация котельных, производственных и административных зданий</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">06</span>
+      <span class="elec-list__text">Монтаж систем автоматизации и защиты газового оборудования</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">07</span>
+      <span class="elec-list__text">Проведение испытаний на плотность и герметичность газопроводов</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">08</span>
+      <span class="elec-list__text">Сдача выполненных работ в газоснабжающей организации</span>
+    </li>
+  </ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="section-header reveal">
+    <h2 class="section-title">Реализованные объекты</h2>
+    <p class="section-sub">2020 — 2024. Жилые, коммерческие и промышленные проекты.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="proj pa reveal">
+      <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pb reveal">
+      <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pc reveal">
+      <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pd reveal">
+      <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pe reveal">
+      <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pf reveal">
+      <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Газоснабжение · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Газоснабжение · Логойск</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+</script>
+{% endblock %}

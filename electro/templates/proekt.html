@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+    {% block title %}Проектирование - Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/proekt.css') }}">
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="des-hero reveal">
+  <div class="des-hero__inner">
+    <span class="des-hero__label">Услуги</span>
+    <h1 class="des-hero__title">Проектирование</h1>
+    <p class="des-hero__sub">Разработка проектной документации для объектов жилого,<br>коммерческого и промышленного назначения</p>
+  </div>
+  <div class="des-hero__line"></div>
+</section>
+
+<!-- NAV TABS -->
+<nav class="des-tabs reveal">
+  <a href="#electricity" class="des-tab des-tab--active">
+    <span class="des-tab__num">01</span>
+    <span class="des-tab__name">Электроснабжение</span>
+  </a>
+  <a href="#gas" class="des-tab">
+    <span class="des-tab__num">02</span>
+    <span class="des-tab__name">Газоснабжение</span>
+  </a>
+  <a href="#water" class="des-tab">
+    <span class="des-tab__num">03</span>
+    <span class="des-tab__name">Водоснабжение и канализация</span>
+  </a>
+</nav>
+
+<!-- SECTION 01 — ЭЛЕКТРОСНАБЖЕНИЕ -->
+<section id="electricity" class="des-section reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">01</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Проектирование<br>электроснабжения</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body">
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/5.png') }}"
+           alt="Проектирование электроснабжения"
+           class="des-section__image">
+      <div class="des-section__image-caption">Электропроект</div>
+    </div>
+
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Предоставляем услуги по разработке проектной документации для систем внутреннего и наружного электроснабжения. Выполняем проектирование электротехнических разделов для строительных объектов I–IV классов сложности.
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проектирование электроснабжения частных жилых домов и квартир (в том числе для подключения электрического отопления и электроплит), административных и общественных зданий, производственных предприятий и складских помещений, торговых объектов, павильонов и магазинов, садоводческих товариществ, сельскохозяйственных зданий и сооружений</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Расчёт необходимой электрической мощности для объекта</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Расчёт предполагаемых нагрузок на отдельные участки электрических сетей</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Детальное проектирование структур и основных параметров электрической системы</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Подбор подходящего электротехнического оборудования, кабельной продукции и защитных устройств</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Оценка стоимости электромонтажных работ и оборудования</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">ТУ на подключение</span>
+        <span class="des-tag">Электрификация</span>
+        <span class="des-tag">Молниезащита</span>
+        <span class="des-tag">Освещение</span>
+        <span class="des-tag">Согласование</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 — ГАЗОСНАБЖЕНИЕ -->
+<section id="gas" class="des-section des-section--alt reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">02</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Проектирование<br>газоснабжения</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body des-section__body--reverse">
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Подготовка проектно-сметной документации для систем внутреннего и наружного газоснабжения.
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Получение разрешения на газификацию жилого дома в исполнительном комитете</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Оформление технических условий в организации, занимающейся газоснабжением</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Проведение обследования объекта</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Выполнение геодезической съёмки участка</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Разработка проектно-сметной документации на систему газоснабжения</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Согласование подготовленного проекта с газоснабжающей организацией</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">Газоснабжение</span>
+        <span class="des-tag">Котельные</span>
+        <span class="des-tag">Газовые счетчики</span>
+        <span class="des-tag">Автоматизация</span>
+        <span class="des-tag">Экспертиза</span>
+      </div>
+    </div>
+
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/5.png') }}"
+           alt="Проектирование газоснабжения"
+           class="des-section__image">
+      <div class="des-section__image-caption">Газопровод</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03 — ВОДОСНАБЖЕНИЕ -->
+<section id="water" class="des-section reveal">
+  <div class="des-section__header">
+    <span class="des-section__num">03</span>
+    <div class="des-section__title-wrap">
+      <h2 class="des-section__title">Проектирование водоснабжения<br>и канализации</h2>
+      <div class="des-section__line"></div>
+    </div>
+  </div>
+
+  <div class="des-section__body">
+    <div class="des-section__image-wrap">
+      <img src="{{ url_for('static', filename='image/7.png') }}"
+           alt="Проектирование водоснабжения и канализации"
+           class="des-section__image">
+      <div class="des-section__image-caption">Водоснабжение</div>
+    </div>
+
+    <div class="des-section__content">
+      <p class="des-section__lead">
+        Предоставление услуги по разработке проектной документации для подключения объектов к централизованным системам водоснабжения и (или) водоотведения (канализации).
+      </p>
+
+      <ul class="des-list">
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Разработка проекта подключения объектов к централизованным сетям водоснабжения и канализации</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Подготовка схем, планов и пояснительной документации для выполнения строительно-монтажных работ</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Разработка проектно-сметной документации в соответствии с техническими условиями</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Подготовка и анализ необходимых исходных данных и технической документации для проектирования</span>
+        </li>
+        <li class="des-list__item">
+          <span class="des-list__icon">—</span>
+          <span>Подготовка проекта для согласования и дальнейшего выполнения строительно-монтажных работ</span>
+        </li>
+      </ul>
+
+      <div class="des-section__tags">
+        <span class="des-tag">ХВС / ГВС</span>
+        <span class="des-tag">Канализация</span>
+        <span class="des-tag">Насосные станции</span>
+        <span class="des-tag">Очистные сооружения</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="des-cta reveal">
+  <div class="des-cta__inner">
+    <span class="des-cta__label">Начать проект</span>
+    <h2 class="des-cta__title">Готовы обсудить ваш объект?</h2>
+    <p class="des-cta__text">Оставьте заявку — свяжемся в течение рабочего дня и проконсультируем по стоимости и срокам</p>
+    <a href="{{ url_for('main.get_contact') }}" class="des-cta__btn">Связаться с нами</a>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/designing.js') }}"></script>
+
+{% endblock %}

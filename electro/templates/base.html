@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Спецэнергострой ПРО{% endblock %}</title>
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
+
+    {% block styles %}{% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+<!-- NAV -->
+<nav>
+  <a href="{{ url_for('main.get_main_page') }}" class="nav-logo">Спецэнергострой ПРО</a>
+  <ul class="nav-links">
+    <li><a href="{{ url_for('main.get_main_page') }}#services">Услуги</a></li>
+    <li><a href="{{ url_for('main.get_main_page') }}#process">Процесс</a></li>
+    <li><a href="{{ url_for('main.get_main_page') }}#projects">Объекты</a></li>
+    <li><a href="{{ url_for('main.get_contact') }}">Контакты</a></li>
+  </ul>
+  <div class="nav-contact"><a href="tel:+375296262485">+375 29 626-24-85</a></div>
+</nav>
+</header>
+<div class="cur" id="cur"></div>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <div class="f-flinks">
+    <a href="#">Политика использования cookie</a>
+    <a href="#">Политика персональных данных</a>
+  </div>
+  <div class="f-copy">© 2026 Спецэнергострой ПРО. Логойск</div>
+    <div class="f-flinks"><a href="http://ytlabs.tilda.ws" target="_blank">
+    <i class="fas fa-code"></i>Дизайн и разработка сайта: YT LABS</a></div>
+</footer>
+<script src="{{ url_for('static', filename='js/cursor.js') }}"></script>
+{% block scripts %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,31 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+    {% block title %}Контакты Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+{% endblock %}
+{% block content %}
+<div class="about-section">
+     <div class="about-text">
+    <h1>Унитарное предприятие «Спецэнергострой ПРО»</h1>
 
-<!--Форма обратной связи-->
- <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post">
-      <label for="name">Имя и фамилия</label>
-    <input id="name" type="text" name="name" placeholder="Введите имя и фамилию" required>
-      <label for="phone">Телефон (+375 ХХ ХХХХХХХ)</label>
-    <input type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
-      <label for="phone">Email</label>
-    <input type="email" name="email" id="email" placeholder="Ваша электронная почта">
-      <label for="subject">Тема</label>
-    <input type="text" id="subject" name="subject" placeholder="Тема сообщения (необязательно)">
-      <label for="message">Сообщение</label>
-    <textarea name="message" id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
-      <label class="agreement-wrapper">
-          <input type="checkbox" id="agreement" name="agreement" class="agreement" required>
+    <div class="contacts">
+  <!-- Адрес -->
+ <a href="https://yandex.by/maps/?ll=27.852445,54.197889&z=17&pt=27.852445,54.197889,pm2rdl~27.852445,54.197889"
+   target="_blank"
+   title="Открыть на Яндекс.Картах"
+   class="contact">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+      <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+    </svg>
+    <span>223141, Минская область, г. Логойск, ул. Янки Купалы, дом 12А-4, помещение №4, кабинет 4-4</span>
+  </a>
+  <div class="contact">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+      <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/>
+    </svg>
+    <span>УНП 690868071</span>
+  </div>
+        <p><strong>Директор предприятия:<br>
+    </strong> Барановский Андрей Геннадьевич </p>
+    <p>Компания зарегистрирована Логойским райисполкомом 14 сентября 2020 года.</p>
+  <a href="tel:+375296262485" class="ttt">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+        <path d="M7 2a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7zm0 2h10v16H7V4zm5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+</svg>
+    <span>+375 29 626-24-85</span>
+  </a>
+  <a href="mailto:Spelbtorg@mail.ru" class="ttt">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18v-9.99l8 6.99 8-6.99V18H4z"/>
+    </svg>
+    <span>Spelbtorg@mail.ru</span>
+  </a>
+  <div class="contact">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+      <path d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm.5-9.25V6h-1v6.5h6v-1z"/>
+    </svg>
+    <span>Пн-Пт с 8.00 до 18.00</span>
+  </div>
+
+  <div class="contact">
+    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#555555">
+      <path d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm.5-9.25V6h-1v6.5h6v-1z"/>
+    </svg>
+    <span>Сб-Вс с 9.00 до 15.00</span>
+  </div>
+ </div>
+</div>
+    <div class="certificate">
+      <img id="certificate-photo" src="{{ url_for('static', filename='#') }}" alt="Свидетельство о регистрации" />
+        <span class="certificate-caption">Увеличить</span>
+    </div>
+ </div>
+<section id="requisites" class="pay_section">
+    <h2 class="payments">РЕКВИЗИТЫ</h2>
+    <pre class="pay_pre">
+Получатель: УП «Спецэнергострой ПРО»
+УНП: 690868071
+Расчетный счет: BY02ВАРВ30127673700100000000
+Банк: ОАО «Белагропромбанк»
+БИК: ВАРВВY2X
+    </pre>
+  </section>
+    <div>
+    <h2>Где мы находимся</h2>
+</div>
+<div class="map-photo-wrapper">
+
+        <div class="map-section">
+        <a href="https://yandex.by/maps/?ll=27.852445,54.197889&z=17&pt=27.852445,54.197889,pm2rdl~27.852445,54.197889" style="color:black;font-size:12px;position:absolute;top:0px;">Спецэнергострой ПРО</a>
+        <a href="https://yandex.by/maps/?ll=27.852445,54.197889&z=17&pt=27.852445,54.197889,pm2rdl~27.852445,54.197889" style="color:black;font-size:12px;position:absolute;top:14px;">Логойск, ул. Янки Купалы 12А</a>
+         <iframe
+    src="https://yandex.by/map-widget/v1/?ll=27.852445,54.197889&z=17&pt=27.852445,54.197889,pm2rdl"
+    width="100%"
+    height="400px"
+    frameborder="1"
+    allowfullscreen="true"
+    style="position:relative;">
+  </iframe>
+</div>
+    <div class="map-photo">
+        <img src="{{ url_for('static', filename='#') }}" alt="Вход">
+    </div>
+</div>
+<div class="photo-section">
+  <div class="photo-grid">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+  </div>
+</div>
+
+<div class="form-partners-wrapper">
+    <!-- Партнёры -->
+  <div class="partners-section">
+    <span class="partners-label">Наши партнёры</span>
+
+    <div class="partner-card">
+      <h3>ЧП «СпецЭлектроБелТорг»</h3>
+      <span class="partner-sub">Магазин «Электротовары»</span>
+
+      <div class="partner-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+          <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+        <span>223141, Минская область, г. Логойск, Гайненское шоссе, дом 1, 1 этаж (цокольный)</span>
+      </div>
+
+      <div class="partner-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+          <path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6zm7 1.5L18.5 9H13V3.5z"/>
+        </svg>
+        <span>УНП 690846458</span>
+      </div>
+   <div class="partner-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+          <path d="M7 2a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H7zm0 2h10v16H7V4zm5 14a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+        </svg>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <a href="tel:+375177427127">+375 17 742-71-27</a>
+          <a href="tel:+375298677295">+375 29 867-72-95</a>
+        </div>
+      </div>
+
+      <div class="partner-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+          <path d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1zm0 20a9 9 0 1 1 9-9 9.01 9.01 0 0 1-9 9zm1-4H11V11h2zm0-10H11V5h2z"/>
+        </svg>
+        <a href="https://energo-logoysk.by" target="_blank" rel="noopener">energo-logoysk.by</a>
+      </div>
+    </div>
+  </div>
+
+ <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post" class="con-form reveal" onsubmit="return false;">
+    <div class="f-field">
+      <label for="name" class="f-label">Ваше имя</label>
+      <input id="name" type="text" class="f-input" name="name" placeholder="Введите имя" required>
+    </div>
+    <div class="f-field">
+      <label for="phone" class="f-label">Телефон</label>
+      <input class="f-input" type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
+    </div>
+      <div class="f-field">
+      <label for="phone" class="f-label">Email</label>
+      <input class="f-input" type="email" name="email" id="email" placeholder="Ваша электронная почта">
+    </div>
+    <div class="f-field">
+      <label for="subject" class="f-label">Тема</label>
+    <input class="f-input" type="text" id="subject" name="subject" placeholder="Расскажите о проекте...">
+    </div>
+      <div class="f-field">
+      <label class="f-label" for="message">Сообщение</label>
+    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
+    </div>
+      <div class="f-field">
+      <label class="agreement-wrapper f-label">
+          <input class="f-input agreement" type="checkbox" id="agreement" name="agreement" required>
           <span class="agreem">Я даю согласие на обработку персональных данных в соответствии с <a href="{{ url_for('main.get_privacy') }}#personal-data" target="_blank" class="agree" rel="noopener">Политикой обработки персональных данных</a></span></label>
+    </div>
       <div id="response-message-error_feedback" style="color:red;"></div>
-    <button type="submit" class="send-btn">Отправить</button>
+    <button type="submit" class="f-btn send-btn">
+      Отправить заявку
+    </button>
   </form>
 
+</div>
+{% endblock %}
+{% block scripts %}
 <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
-
-</body>
-</html>
+{% endblock %}
