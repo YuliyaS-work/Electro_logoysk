@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+    {% block title %}Электроснабжение — Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
+{% endblock %}
+{% block content %}
+<!-- HERO -->
+<section class="elec-hero reveal">
+  <div class="elec-hero__left">
+    <span class="elec-hero__label">Услуги / Электроснабжение</span>
+    <h1 class="elec-hero__title">Электро-<br><em>снабжение</em></h1>
+  </div>
+  <div class="elec-hero__right">
+    <p class="elec-hero__lead">
+      Выполняем полный комплекс электромонтажных работ на объектах строительства I–IV классов сложности, включая индивидуальное жилищное строительство.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="elec-services reveal">
+  <div class="elec-services__header">
+    <span class="elec-services__title">Виды работ</span>
+    <span class="elec-services__count">11 направлений</span>
+  </div>
+
+  <ul class="elec-list">
+    <li class="elec-list__item">
+      <span class="elec-list__num">01</span>
+      <span class="elec-list__text">Монтаж систем электроснабжения и электроосвещения</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">02</span>
+      <span class="elec-list__text">Монтаж силовых трансформаторов и высоковольтного оборудования: выключателей, разъединителей, трансформаторов тока и напряжения</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">03</span>
+      <span class="elec-list__text">Монтаж систем автоматизированного контроля и учёта электроэнергии (АСКУЭ)</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">04</span>
+      <span class="elec-list__text">Монтаж и демонтаж приборов учёта электроэнергии</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">05</span>
+      <span class="elec-list__text">Монтаж систем управления электроснабжением и освещением</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">06</span>
+      <span class="elec-list__text">Монтаж контуров заземления и молниезащиты зданий и сооружений</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">07</span>
+      <span class="elec-list__text">Монтаж вводно-распределительных устройств, распределительных щитов, ящиков и шкафов управления</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">08</span>
+      <span class="elec-list__text">Монтаж ячеек 6–10 кВ, ремонт низковольтного электрощитового оборудования</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">09</span>
+      <span class="elec-list__text">Прокладка кабельных линий в земле и по конструкциям, установка соединительных и концевых муфт</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">10</span>
+      <span class="elec-list__text">Монтаж и замена светильников наружного освещения</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">11</span>
+      <span class="elec-list__text">Обслуживание трансформаторных подстанций</span>
+    </li>
+  </ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="section-header reveal">
+    <h2 class="section-title">Реализованные объекты</h2>
+    <p class="section-sub">2020 — 2025. Жилые, коммерческие и промышленные проекты.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="proj pa reveal">
+      <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Особняк Соколиная Гора</div>
+            <div class="proj-info-meta">Умный дом · Москва, 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Особняк Соколиная Гора</div>
+        <div class="proj-cap-meta">Умный дом — Бюро Рубцова · Москва</div>
+      </div>
+    </div>
+    <div class="proj pb reveal">
+      <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Студия Loft 540</div>
+            <div class="proj-info-meta">Освещение · СПб, 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Студия Loft 540</div>
+        <div class="proj-cap-meta">Дизайнерское освещение · СПб</div>
+      </div>
+    </div>
+    <div class="proj pc reveal">
+      <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Завод Восток-М</div>
+            <div class="proj-info-meta">Промышленная электрика · Калуга</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Завод Восток-М</div>
+        <div class="proj-cap-meta">Промышленная электрика · Калуга</div>
+      </div>
+    </div>
+    <div class="proj pd reveal">
+      <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">ЖК Северное сияние — 240 квартир</div>
+            <div class="proj-info-meta">Монтаж под ключ · Москва, 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">ЖК Северное сияние</div>
+        <div class="proj-cap-meta">Полная электрификация — Forma · Москва</div>
+      </div>
+    </div>
+    <div class="proj pe reveal">
+      <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Бутик-отель Birch</div>
+            <div class="proj-info-meta">Умный свет · Сочи, 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Бутик-отель Birch</div>
+        <div class="proj-cap-meta">Атмосферное освещение · Сочи</div>
+      </div>
+    </div>
+    <div class="proj pf reveal">
+      <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Офис Yandex Cloud — 4 200 м²</div>
+            <div class="proj-info-meta">Автоматизация · Москва, 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Офис Yandex Cloud</div>
+        <div class="proj-cap-meta">Умное пространство · Москва</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+</script>
+{% endblock %}

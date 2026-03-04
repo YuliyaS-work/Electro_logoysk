@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-    {% block title %}Аренда техники{% endblock %}
+    {% block title %}Аренда техники — Спецэнергострой ПРО{% endblock %}
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
 {% endblock %}
@@ -7,8 +7,8 @@
 <div class="header">
   <div class="header-line"></div>
   <div>
-    <h1>Наши услуги</h1>
-    <p>Монтаж инженерных систем под ключ</p>
+    <h1>Аренда техники</h1>
+    <p>Предоставление спецтехники в аренду</p>
   </div>
 </div>
 
@@ -21,8 +21,12 @@
     <div class="desc" data-num="01">
       <span class="service-num">Услуга 01</span>
       <h2>Мини-экскаватор SANY SY26U</h2>
-      <p class="desc-text">Аренда мини-экскаватора гусеничного SANY SY26U</p>
-      <a href="#" class="desc-cta">Узнать подробнее</a>
+      <p class="desc-text">Аренда мини-экскаватора гусеничного SANY SY26U — компактная машина для работы в стеснённых условиях.</p>
+      <a href="#" class="desc-cta"
+      data-title="Мини-экскаватор SANY SY26U"
+   data-img="{{ url_for('static', filename='image/1avto.png') }}"
+   data-text="Мини-экскаватор гусеничный SANY SY26U — компактная машина для работы в стеснённых условиях. Эксплуатационная масса — 2.68 т., мощность двигателя — 15,2 кВт / 20,67 л.с., объём ковша — 0,06 м³. Подходит для рытья траншей, котлованов, планировочных работ на узких участках.">
+        Узнать подробнее</a>
     </div>
   </div>
 
@@ -33,8 +37,12 @@
     <div class="desc" data-num="02">
       <span class="service-num">Услуга 02</span>
       <h2>Мини-экскаватор Volvo EC 14</h2>
-      <p class="desc-text">Аренда мини-экскаватора гусеничного Volvo EC 14</p>
-      <a href="#" class="desc-cta">Узнать подробнее</a>
+      <p class="desc-text">Аренда мини-экскаватора гусеничного Volvo EC 14 — лёгкая и манёвренная машина массой 1500 кг.</p>
+      <a href="#" class="desc-cta"
+      data-title="Мини-экскаватор Volvo EC 14"
+   data-img="{{ url_for('static', filename='image/2avto.png') }}"
+   data-text="Мини-экскаватор гусеничный Volvo EC 14 — лёгкая и манёвренная машина массой 1500 кг. Глубина копания 2010-2160 мм, объем ковша 0,05 м3, мощность 11,4 кВт, радиус копания 3410-3560 мм.">
+        Узнать подробнее</a>
     </div>
   </div>
 
@@ -45,8 +53,11 @@
     <div class="desc" data-num="03">
       <span class="service-num">Услуга 03</span>
       <h2>Бурильно-крановая машина БМ-205Д</h2>
-      <p class="desc-text">Аренда бурильно-крановой машины БМ-205Д на базе трактора МТЗ82</p>
-      <a href="#" class="desc-cta">Узнать подробнее</a>
+      <p class="desc-text">Аренда бурильно-крановой машины БМ-205Д на базе трактора МТЗ-82 предназначена для бурения скважин и ям под столбы, опоры линий электропередач, заборы и фундаменты.</p>
+      <a href="#" class="desc-cta" data-title="Бурильно-крановая машина БМ-205Д"
+   data-img="{{ url_for('static', filename='image/3avto.png') }}"
+   data-text="Бурильно-крановая машина БМ-205Д на базе трактора МТЗ-82 предназначена для бурения скважин и ям под столбы, опоры линий электропередач, заборы и фундаменты. Высокая проходимость трактора позволяет работать на грунтах со слабой несущей способностью и в труднодоступных местах.">
+        Узнать подробнее</a>
     </div>
   </div>
 
@@ -57,8 +68,10 @@
     <div class="desc" data-num="04">
       <span class="service-num">Услуга 04</span>
       <h2>Кран-манипулятор МАЗ</h2>
-      <p class="desc-text">Аренда крана-манипулятора МАЗ с буром и люлькой</p>
-      <a href="#" class="desc-cta">Узнать подробнее</a>
+      <p class="desc-text">Аренда крана-манипулятора МАЗ с буром и люлькой, что позволяет выполнять широкий спектр работ.</p>
+      <a href="#" class="desc-cta" data-title="Кран-манипулятор МАЗ"
+   data-img="{{ url_for('static', filename='image/4avto.png') }}"
+   data-text="Кран-манипулятор МАЗ оснащён буровой установкой и монтажной люлькой, что позволяет выполнять широкий спектр работ: установку опор освещения и линий электропередач, погрузочно-разгрузочные операции, подъём персонала на высоту. Грузоподъёмность манипулятора на min/max вылете — 7500 / 350 кг, вылет стрелы (max) — 20 м.">Узнать подробнее</a>
     </div>
   </div>
 
@@ -68,6 +81,53 @@
   <span>Работаем по всей Республике Беларусь</span>
   <span>Звоните: <strong><a href="tel:+375296262485">+375 29 626-24-85</a></strong></span>
 </div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-image-wrap">
+      <img id="modal-img" src="" alt="">
+    </div>
+    <div class="modal-body">
+      <span class="modal-label">Подробнее</span>
+      <h3 class="modal-title" id="modal-title"></h3>
+      <p class="modal-text" id="modal-text"></p>
+      <a href="{{ url_for('main.get_contact') }}#feedback-form" class="modal-btn">Оставить заявку</a>
+    </div>
+  </div>
+</div>
 {% endblock %}
 {% block scripts %}
+<script>
+  const overlay = document.getElementById('modal-overlay');
+const modalClose = document.getElementById('modal-close');
+const modalTitle = document.getElementById('modal-title');
+const modalText = document.getElementById('modal-text');
+const modalImg = document.getElementById('modal-img');
+
+document.querySelectorAll('.desc-cta').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    modalTitle.textContent = btn.dataset.title;
+    modalText.textContent  = btn.dataset.text;
+    modalImg.src           = btn.dataset.img;
+    modalImg.alt           = btn.dataset.title;
+    overlay.classList.add('active');
+  });
+});
+
+modalClose.addEventListener('click', () => overlay.classList.remove('active'));
+overlay.addEventListener('click', e => {
+  if (e.target === overlay) overlay.classList.remove('active');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') overlay.classList.remove('active');
+});
+</script>
 {% endblock %}

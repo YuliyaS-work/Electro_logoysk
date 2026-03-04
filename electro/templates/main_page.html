@@ -193,14 +193,14 @@
 <!-- SERVICES -->
 <section id="services" class="services">
   <div class="svc-head reveal">
-    <h2 class="svc-title">Наши<br><em>услуги</em></h2>
+    <h2 class="svc-title">Наши <em>услуги</em></h2>
     <p class="svc-note">Комплекс инженерных работ под ключ. Для каждого объекта — продуманное решение и прозрачная смета.</p>
   </div>
   <div class="svc-list reveal">
     <div class="svc-item">
       <div class="svc-n">01</div>
       <div class="svc-info">
-        <div class="svc-name">Проектирование</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_proekt') }}">Проектирование</a></div>
         <div class="svc-sub">Электро-, газо-, водоснабжение и канализация</div>
       </div>
       <div class="svc-price">Индивидуально<small>По проекту</small></div>
@@ -209,7 +209,7 @@
     <div class="svc-item">
       <div class="svc-n">02</div>
       <div class="svc-info">
-        <div class="svc-name">Электроcнабжение</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_electro') }}">Электроcнабжение</a></div>
         <div class="svc-sub">Сети, освещение, щиты, КЛ, ТП, ВРУ</div>
       </div>
       <div class="svc-price">Индивидуально<small>По техзаданию</small></div>
@@ -218,7 +218,7 @@
     <div class="svc-item">
       <div class="svc-n">03</div>
       <div class="svc-info">
-        <div class="svc-name">Высоковольтные работы</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_electro') }}">Высоковольтные работы</a></div>
         <div class="svc-sub">Трансформаторы, ячейки 6–10 кВ, РУ</div>
       </div>
       <div class="svc-price">Индивидуально<small>Объекты любой сложности</small></div>
@@ -227,7 +227,7 @@
     <div class="svc-item">
       <div class="svc-n">04</div>
       <div class="svc-info">
-        <div class="svc-name">Газоснабжение</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_gas') }}">Газоснабжение</a></div>
         <div class="svc-sub">Монтаж, подключение, испытания</div>
       </div>
       <div class="svc-price">Индивидуально<small>Сдача в газовые службы</small></div>
@@ -236,7 +236,7 @@
     <div class="svc-item">
       <div class="svc-n">05</div>
       <div class="svc-info">
-        <div class="svc-name">Водоснабжение и канализация</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_water') }}">Водоснабжение и канализация</a></div>
         <div class="svc-sub">Прокладка сетей, колодцы, подключение</div>
       </div>
       <div class="svc-price">Индивидуально<small>По проекту</small></div>
@@ -245,7 +245,7 @@
     <div class="svc-item">
       <div class="svc-n">06</div>
       <div class="svc-info">
-        <div class="svc-name">Лаборатория электрофизических измерений</div>
+        <div class="svc-name"><a href="{{ url_for('main.get_lab') }}">Лаборатория электрофизических измерений</a></div>
         <div class="svc-sub">Измерения, проверки, испытания, тепловизионный контроль</div>
       </div>
       <div class="svc-price">Индивидуально<small>Выезд специалиста</small></div>
@@ -343,40 +343,30 @@
 
     <div class="con-title-wrap">
     <h2 class="con-title">Давайте<br>обсудим<br><em>проект</em></h2>
-<!--вариант с лампочкой-->
-    <div class="lamp-switch" id="themeToggle">
-      <div class="edison-lamp">
-        <div class="edison-wire"></div>
-        <div class="edison-cap"></div>
-        <div class="edison-bulb">
-          <div class="edison-filament"></div>
-        </div>
-      </div>
-      <span class="lamp-cord__hint">потяни</span>
-    </div>
-<!-- вариант с абажуром-->
-<!--<div class="reading-lamp" id="themeToggle">-->
-<!--  <div class="rl-shade">-->
-<!--    <div class="rl-bulb"></div>-->
-<!--  </div>-->
-<!--  <div class="rl-neck"></div>-->
-<!--  <div class="rl-stem"></div>-->
-<!--  <div class="rl-base"></div>-->
-<!--  <div class="rl-beam"></div>-->
-<!--  <span class="rl-hint">включи</span>-->
-<!--</div>-->
+
+<div class="reading-lamp" id="themeToggle">
+  <div class="rl-shade">
+    <div class="rl-bulb"></div>
+  </div>
+  <div class="rl-neck"></div>
+  <div class="rl-stem"></div>
+  <div class="rl-base"></div>
+  <div class="rl-beam"></div>
+  <span class="rl-hint">включи</span>
+</div>
  </div>
 
     <div class="con-details">
-      <div class="con-row"><span>Телефон</span><span class="con-val"><a href="tel:+375296262485">+375 29 626-24-85</a></span></div>
-      <a href="mailto:hello_electro@gmail.com" class="con-row"><span>Email</span><span class="con-val">hello_electro@gmail.com</span></a>
-      <a href="https://t.me/aaavdrug" class="con-row"><span>Telegram</span><span class="con-val">@aaavdrug</span></a>
-      <div class="con-row"><span>Адрес</span><span class="con-val">223142, Минская область, г.Логойск, ул. Янки Купалы, д. 12A-4</span></div>
+      <div class="con-row"><span>Телефон</span><a href="tel:+375296262485" class="con-val">+375 29 626-24-85</a></div>
+      <div class="con-row"><span>Email</span><a href="mailto:hello_electro@gmail.com" class="con-val">hello_electro@gmail.com</a></div>
+      <div class="con-row"><span>Telegram</span><a href="https://t.me/aaavdrug" class="con-val">@aaavdrug</a></div>
+      <div class="con-row con-row--address"><span>Адрес</span><span class="con-val">г. Логойск, ул. Янки Купалы, д. 12A-4</span></div>
     </div>
 
   </div>
 
   <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post" class="con-form reveal" onsubmit="return false;">
+    <div class="f-row">
     <div class="f-field">
       <label for="name" class="f-label">Ваше имя</label>
       <input id="name" type="text" class="f-input" name="name" placeholder="Введите имя" required>
@@ -385,6 +375,7 @@
       <label for="phone" class="f-label">Телефон</label>
       <input class="f-input" type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
     </div>
+      </div>
       <div class="f-field">
       <label for="phone" class="f-label">Email</label>
       <input class="f-input" type="email" name="email" id="email" placeholder="Ваша электронная почта">
@@ -395,9 +386,9 @@
     </div>
       <div class="f-field">
       <label class="f-label" for="message">Сообщение</label>
-    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="6" required></textarea>
+    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="4" required></textarea>
     </div>
-      <div class="f-field">
+      <div class="f-field f-field--check">
       <label class="agreement-wrapper f-label">
           <input class="f-input agreement" type="checkbox" id="agreement" name="agreement" required>
           <span class="agreem">Я даю согласие на обработку персональных данных в соответствии с <a href="{{ url_for('main.get_privacy') }}#personal-data" target="_blank" class="agree" rel="noopener">Политикой обработки персональных данных</a></span></label>
@@ -413,22 +404,11 @@
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
 <script>
-    document.getElementById('themeToggle').addEventListener('click', () => {
+document.getElementById('themeToggle').addEventListener('click', () => {
   const contact = document.getElementById('contact');
-  const lamp    = document.querySelector('.edison-lamp');
-  const hint    = document.querySelector('.lamp-cord__hint');
-
-  lamp.classList.add('pulling');
-  lamp.addEventListener('animationend', () => lamp.classList.remove('pulling'), { once: true });
-
+  const hint    = document.querySelector('.rl-hint');
   const isLight = contact.classList.toggle('light');
-  hint.textContent = isLight ? 'включено' : 'потяни';
+  hint.textContent = isLight ? 'выключи' : 'включи';
 });
-<!--document.getElementById('themeToggle').addEventListener('click', () => {-->
-<!--  const contact = document.getElementById('contact');-->
-<!--  const hint    = document.querySelector('.rl-hint');-->
-<!--  const isLight = contact.classList.toggle('light');-->
-<!--  hint.textContent = isLight ? 'выключи' : 'включи';-->
-<!--});-->
 </script>
 {% endblock %}

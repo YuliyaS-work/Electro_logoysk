@@ -156,7 +156,7 @@
 }
 
 .stmt-label {
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--stone);
@@ -327,7 +327,7 @@
 
 /* ── SERVICES ── */
 .services {
-  padding: 120px 52px;
+  padding: 0px 52px;
   background: var(--white);
 }
 
@@ -345,7 +345,7 @@
   line-height: 0.92;
   color: var(--black);
 }
-.svc-title em { font-style: italic; color: var(--stone); }
+.svc-title em { font-style: italic; color: var(--bark); }
 
 .svc-note {
   max-width: 280px;
@@ -567,39 +567,44 @@
 .contact {
   background: var(--sand);
   color: var(--white);
-  padding: 140px 52px;
+  padding: 100px 52px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 100px;
+  gap: 72px;
   align-items: start;
 }
 
 .con-eyebrow {
-  font-size: 14px; letter-spacing: 0.35em; text-transform: uppercase;
-  color: var(--bark); margin-bottom: 24px;
+  font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--bark); margin-bottom: 16px;
 }
 
 .con-title {
   font-family: var(--serif);
-  font-size: clamp(52px, 6vw, 84px);
+  font-size: clamp(42px, 5vw, 68px);
   font-weight: 300; line-height: 0.92; margin-bottom: 56px;
 }
 .con-title em { font-style: italic; color: var(--bark); }
-
 .con-details { display: flex; flex-direction: column; }
 
 .con-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.07);
-  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  padding-right: 100px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--black);
   transition: color .2s;
 }
 .con-row:hover { color: var(--stone); }
 .con-val {
-  font-family: var(--serif); font-size: 17px;
+  font-family: var(--serif); font-size: 15px;
   text-transform: none; letter-spacing: 0.01em; color: var(--stone);
 }
-
 .contact {
   transition: background .5s, color .5s;
 }
@@ -628,143 +633,19 @@
   gap: 32px;
   margin-bottom: 56px;
 }
-
-.con-title {
-  margin-bottom: 0; /* убираем старый margin, он теперь на wrap */
-}
-.lamp-switch {
-  padding-top: 8px; /* выровнять с верхом заголовка */
-  padding-left: 50px;
-  flex-shrink: 0;
-}
-
-.edison-lamp {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Провод сверху */
-.edison-wire {
-  width: 1px;
-  height: 60px;
-  background: #444;
-  transition: background .3s, height .2s;
-}
-.contact.light .edison-wire { background: var(--stone); }
-
-/* Цоколь */
-.edison-cap {
-  width: 18px; height: 12px;
-  background: #555;
-  border-radius: 2px 2px 0 0;
-  position: relative;
-  transition: background .4s;
-}
-.edison-cap::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 2px; right: 2px;
-  height: 3px;
-  background: #444;
-  border-radius: 0 0 2px 2px;
-}
-.contact.light .edison-cap { background: var(--stone); }
-
-/* Лампочка груша */
-.edison-bulb {
-  width: 28px; height: 36px;
-  background: transparent;
-  border: 1px solid #555;
-  border-top: none;
-  border-radius: 0 0 50% 50% / 0 0 80% 80%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color .4s, background .4s, box-shadow .4s;
-}
-.contact.light .edison-bulb {
-  border-color: #c8a840;
-  background: rgba(255, 220, 100, 0.15);
-  box-shadow: 0 0 20px 8px rgba(255,200,60,0.25), 0 0 60px 20px rgba(255,180,40,0.1);
-}
-
-/* Нить накала */
-.edison-filament {
-  width: 10px; height: 14px;
-  border: 1px solid #444;
-  border-top: none;
-  border-radius: 0 0 50% 50%;
-  transition: border-color .4s;
-}
-.contact.light .edison-filament {
-  border-color: #FFB830;
-  box-shadow: 0 0 4px rgba(255,180,40,0.8);
-}
-
-/* Шнурок для дёргания */
-.lamp-cord__hint {
-  font-size: 8px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: #444;
-  opacity: 0.35;
-  margin-top: 16px;
-  transition: opacity .3s;
-}
-.lamp-switch:hover .edison-wire { height: 72px; }
-.lamp-switch:hover .lamp-cord__hint { opacity: 0.65; }
-.lamp-switch:active .edison-wire { height: 88px; }
-
-.lamp-cord__hint { cursor: none; }
-
-@keyframes cordPull {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(18px); }
-  60%  { transform: translateY(6px); }
-  80%  { transform: translateY(12px); }
-  100% { transform: translateY(0); }
-}
-.edison-lamp.pulling { animation: cordPull .4s ease-out; }
-
-.torch-switch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  cursor: none;
-  user-select: none;
-  padding-top: 8px;
-}
-
-.torch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Провод */
-.torch-wire {
-  width: 1px; height: 40px;
-  background: #444;
-  transition: background .3s;
-}
-.contact.light .torch-wire { background: var(--stone); }
-
-/* Абажур вариант 2
+/* Абажур вариант 2*/
 .reading-lamp {
   display: flex;
   flex-direction: column;
   align-items: center;
   cursor: none;
   user-select: none;
-  padding-top: 8px;
-  padding-left: 100px;
+  padding-top: 40px;
+  padding-left: 140px;
   position: relative;
   width: 80px;
 }
-/* Абажур — широкий полукруг
+/* Абажур — широкий полукруг*/
 .rl-shade {
   width: 72px;
   height: 34px;
@@ -778,7 +659,7 @@
   transition: background .4s;
   overflow: hidden;
 }
-/* Блик на абажуре
+/* Блик на абажуре*/
 .rl-shade::before {
   content: '';
   position: absolute;
@@ -787,7 +668,7 @@
   border-radius: 50%;
   background: rgba(255,255,255,0.07);
 }
-/* Ободок низа абажура
+/* Ободок низа абажура*/
 .rl-shade::after {
   content: '';
   position: absolute;
@@ -799,7 +680,7 @@
 .contact.light .rl-shade { background: var(--stone); }
 .contact.light .rl-shade::after { background: #5a5048; }
 
-/* Лампочка внутри
+/* Лампочка внутри*/
 .rl-bulb {
   width: 10px; height: 10px;
   border-radius: 50%;
@@ -814,7 +695,7 @@
   box-shadow: 0 0 12px 6px rgba(255,210,80,0.7), 0 0 30px 12px rgba(255,180,40,0.3);
 }
 
-/* Шейка
+/* Шейка*/
 .rl-neck {
   width: 4px; height: 10px;
   background: #555;
@@ -822,7 +703,7 @@
 }
 .contact.light .rl-neck { background: var(--stone); }
 
-/* Ножка
+/* Ножка*/
 .rl-stem {
   width: 3px; height: 70px;
   background: #555;
@@ -830,7 +711,7 @@
 }
 .contact.light .rl-stem { background: var(--stone); }
 
-/* Основание — широкое тяжёлое
+/* Основание — широкое тяжёлое*/
 .rl-base {
   width: 52px; height: 10px;
   background: #555;
@@ -850,7 +731,7 @@
 .contact.light .rl-base { background: var(--stone); }
 .contact.light .rl-base::before { background: #5a5048; }
 
-/* Луч вниз
+/* Луч вниз*/
 .rl-beam {
   position: absolute;
   top: 34px;
@@ -876,7 +757,7 @@
   50%      { opacity: 0.7; }
 }
 
-/* Подсказка
+/* Подсказка*/
 .rl-hint {
   font-size: 8px;
   letter-spacing: 0.3em;
@@ -886,25 +767,32 @@
   margin-top: 12px;
   transition: opacity .3s;
 }
-.reading-lamp:hover .rl-hint { opacity: 0.65; }*/
+.reading-lamp:hover .rl-hint { opacity: 0.65; }
 
 /* Form */
 .con-form { padding-top: 0; display: flex; flex-direction: column; }
-
+.f-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;
+}
 .f-field {
   border-bottom: 1px solid rgba(255,255,255,.50);
-  padding: 24px 0; transition: border-color .3s;
+  padding: 18px 0; transition: border-color .3s;
 }
 .f-field:focus-within { border-color: rgba(255,255,255,.70); }
-
+.f-field--check {
+  border-bottom: none;
+  padding: 12px 0;
+}
 .f-label {
   font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase;
-  color: #444; margin-bottom: 10px; display: block;
+  color: #444; margin-bottom: 8px; display: block;
 }
 
 .f-input {
   background: none; border: none; outline: none;
-  font-family: var(--serif); font-size: 18px; font-style: italic;
+  font-family: var(--serif); font-size: 18px;
   font-weight: 300; color: var(--black); width: 100%;
 }
 .f-input::placeholder { color: var(--sand); }
@@ -941,29 +829,37 @@
 #feedback-form {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 #feedback-form input[type="text"],
 #feedback-form input[type="tel"],
-#feedback-form input[type="email"],
 #feedback-form textarea {
   background: none;
   border: none;
   outline: none;
   font-family: var(--serif);
   font-size: 20px;
-  font-style: italic;
   font-weight: 300;
   color: var(--black);
   width: 100%;
   resize: none;
+  background: rgba(250, 248, 244, 0.06);
+  border: 1px solid rgba(250, 248, 244, 0.12);
+  border-radius: 16px;
+  padding: 10px 14px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
 }
 #feedback-form input[type="text"]::placeholder,
 #feedback-form input[type="tel"]::placeholder,
 #feedback-form input[type="email"]::placeholder,
 #feedback-form textarea::placeholder {
-  color: #2a2520;
   font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
   color: var(--stone);
+  letter-spacing: 0.04em;
 }
 #feedback-form input[type="text"]:focus,
 #feedback-form input[type="tel"]:focus,
@@ -1028,36 +924,30 @@
   background: linear-gradient(145deg, #aaa, #777);
 }*/
 #feedback-form input[type="checkbox"].agreement {
-  width: 18px;
-  height: 18px;
-  margin: 0;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
   flex-shrink: 0;
   accent-color: var(--bark);
   cursor: none;
 }
 .agreement-wrapper {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   cursor: none;
-  font-family: var(--sans);
-  font-size: 18px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #444;
-  line-height: 1.7;
+  font-size: 14px;
 }
 .agreem {
-  display: inline-block;
-  line-height: 1.7;
-  margin: 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  letter-spacing: 0.02em;
   text-transform: none;
-  letter-spacing: 0.03em;
-  font-size: 18px;
-  color: var(--bark);
+  color: var(--stone);
+  line-height: 1.5;
 }
 .agree{
-  color: var(--stone);
+  color: var(--bark);
   text-decoration: none;
   border-bottom: 1px solid var(--sand);
   transition: border-color .3s, color .3s;
@@ -1068,3 +958,6 @@
   text-decoration: none;
   font-weight: 400;
 }
+/* light-тема — дополнения */
+.contact.light .con-val-wrap { color: var(--stone); }
+.contact.light .con-val-wrap:hover { color: var(--black); }

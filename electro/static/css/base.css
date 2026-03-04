@@ -1,30 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 * { cursor: none !important; }
 :root {
-  /*стиль 1
-  --cream:   #f0ebe2;
-  --sand:    #e2d9cc;
-  --stone:   #c4b9aa;
-  --bark:    #7a6a58;
-  --earth:   #3d3128;
-  --black:   #353C3F;
-  --white:   #faf8f4;*/
-  /*стиль 2
-  --white:  #faf8f4;
---cream:  #EDE8E1;
---sand:   #D5D6D2;
---stone:  #756867;
---bark:   #FF8D3F;
---earth:  #353C3F;
---black:  #1a1f21;*/
-/*стиль 3
---white:  #F4F4EF;
---cream:  #F4F4EF;
---sand:   #ACBEBE;
---stone:  #8A9EA0;
---bark:   #A01D26;
---earth:  #20232A;
---black: #353C3F;*/
 --white:  #faf8f4;   /* оставляем белый фон */
 --sand:   #D5D6D2;   /* Гравий — разделители, круги hero */
 --stone:  #756867;   /* Древесина — подписи, метки */
@@ -64,7 +40,14 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 32px 52px;
-  mix-blend-mode: multiply;
+
+  backdrop-filter: blur(2px) saturate(1.2);
+  -webkit-backdrop-filter: blur(2px) saturate(1.2);
+
+  /* Лёгкая полупрозрачная подложка для читаемости */
+  background: rgba(255, 255, 255, 0.25);
+
+  transition: background 0.3s ease;
 }
 
 .nav-logo {

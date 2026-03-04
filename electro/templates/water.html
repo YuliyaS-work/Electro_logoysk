@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+    {% block title %}Водоснабжение и канализация — Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="elec-hero reveal">
+  <div class="elec-hero__left">
+    <span class="elec-hero__label">Услуги / Водоснабжение и канализация</span>
+    <h1 class="elec-hero__title">Водо-<br><em>снабжение,</em><br>канализация</h1>
+  </div>
+  <div class="elec-hero__right">
+    <p class="elec-hero__lead">
+      Выполняем прокладку водопроводных и канализационных труб от центральных сетей, устанавливаем колодцы, счётчики воды и запорную арматуру.
+    </p>
+  </div>
+</section>
+
+<!-- SERVICES LIST -->
+<section class="elec-services reveal">
+  <div class="elec-services__header">
+    <span class="elec-services__title">Виды работ</span>
+    <span class="elec-services__count">7 направлений</span>
+  </div>
+
+  <ul class="elec-list">
+    <li class="elec-list__item">
+      <span class="elec-list__num">01</span>
+      <span class="elec-list__text">Прокладка наружных водопроводных сетей от центрального водоснабжения до объекта</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">02</span>
+      <span class="elec-list__text">Прокладка наружных канализационных трубопроводов с подключением к центральной канализации</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">03</span>
+      <span class="elec-list__text">Установка водопроводных и канализационных колодцев</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">04</span>
+      <span class="elec-list__text">Монтаж и замена счётчиков холодной и горячей воды</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">05</span>
+      <span class="elec-list__text">Установка запорной арматуры: задвижек, вентилей, обратных клапанов</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">06</span>
+      <span class="elec-list__text">Монтаж внутренних систем холодного и горячего водоснабжения</span>
+    </li>
+    <li class="elec-list__item">
+      <span class="elec-list__num">07</span>
+      <span class="elec-list__text">Гидравлические испытания и сдача сетей водоснабжения и канализации</span>
+    </li>
+  </ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="section-header reveal">
+    <h2 class="section-title">Реализованные объекты</h2>
+    <p class="section-sub">2020 — 2024. Жилые, коммерческие и промышленные проекты.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="proj pa reveal">
+      <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Водоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Водоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pb reveal">
+      <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Канализация · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Канализация · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pc reveal">
+      <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Водоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Водоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pd reveal">
+      <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Канализация · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Канализация · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pe reveal">
+      <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Водоснабжение · 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Водоснабжение · Логойск</div>
+      </div>
+    </div>
+    <div class="proj pf reveal">
+      <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <div class="proj-info">
+          <div class="proj-info-content">
+            <div class="proj-info-title">Здесь будет название</div>
+            <div class="proj-info-meta">Канализация · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-cap-title">Здесь будет название</div>
+        <div class="proj-cap-meta">Канализация · Логойск</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script>
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+revealEls.forEach(el => observer.observe(el));
+</script>
+{% endblock %}
