@@ -24,7 +24,13 @@ def post_feedback():
         mail.send(msg)
 
         return jsonify({"status": "success", "message": "Письмо отправлено"}), 200
+
     except ValidationError as e:
-        return jsonify({"status": "error", "errors": e.errors()}), 400
+        return jsonify({"detail": e.errors()}), 400
+
     except Exception as e:
-        return jsonify({"status": "error", "errors": str(e)}), 500
+        return jsonify({
+            "detail": [{
+                "msg": e.args[0] if e.args else repr(e)
+            }]
+        }), 500

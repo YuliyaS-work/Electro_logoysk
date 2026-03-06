@@ -42,6 +42,4 @@ def get_lab():
 def get_cookie():
     return render_template('cookie.html')
 
-@main_bp.route('/404')
-def get_404():
-    return render_template('404.html')
+
