@@ -1,3 +1,10 @@
+function getCookie(name) {
+    return document.cookie
+        .split("; ")
+        .find(row => row.startsWith(name + "="))
+        ?.split("=")[1];
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("feedback-form");
     const errorBox = document.getElementById("response-message-error_feedback");
@@ -5,10 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // очищаем общую ошибку
         errorBox.textContent = "";
-
-        // очищаем ошибки под полями
         document.querySelectorAll(".error").forEach(el => el.textContent = "");
 
         const url = form.dataset.url;
@@ -21,11 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
             message: form.message.value.trim()
         };
 
+        // 👉 получаем токен
+        const csrfToken = getCookie("csrftoken");
+
         try {
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "X-CSRF-Token": csrfToken   // 👉 добавляем токен
                 },
                 body: JSON.stringify(payload)
             });
@@ -66,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 //document.addEventListener("DOMContentLoaded", () => {
 //  const form     = document.getElementById("feedback-form");
 //  const errorBox = document.getElementById("response-message-error_feedback");

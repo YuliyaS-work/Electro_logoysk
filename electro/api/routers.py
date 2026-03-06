@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, abort, request, jsonify
 from flask_mail import Message
 from pydantic import ValidationError
 
@@ -9,8 +9,14 @@ api_bp = Blueprint('api', __name__)
 
 
 @api_bp.route('/api/feedback', methods=['POST'], strict_slashes=False)
-@api_bp.route('/contact/api/feedback', methods=['POST'], strict_slashes=False)
 def post_feedback():
+    # CSRF проверка
+    cookie_token = request.cookies.get("csrftoken")
+    header_token = request.headers.get("X-CSRF-Token")
+
+    if not cookie_token or cookie_token != header_token:
+        abort(400, description="Invalid CSRF token")
+
     try:
         data = request.get_json()
 

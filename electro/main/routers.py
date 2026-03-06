@@ -1,14 +1,34 @@
-from flask import Blueprint, render_template
+import secrets
+
+from flask import Blueprint, render_template, make_response
 
 main_bp = Blueprint('main', __name__)
 
 @main_bp.route('/')
 def get_main_page():
-    return render_template('main_page.html')
+    token = secrets.token_hex(16)
+    resp = make_response(render_template('main_page.html'))
+    resp.set_cookie(
+        "csrftoken",
+        token,
+        httponly=False,
+        samesite="Strict",
+        secure=False
+    )
+    return resp
 
 @main_bp.route('/contact')
 def get_contact():
-    return render_template('contact.html')
+    token = secrets.token_hex(16)
+    resp = make_response(render_template('contact.html'))
+    resp.set_cookie(
+        "csrftoken",
+        token,
+        httponly=False,
+        samesite="Strict",
+        secure=False
+    )
+    return resp
 
 @main_bp.route('/privacy')
 def get_privacy():

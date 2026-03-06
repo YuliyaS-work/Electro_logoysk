@@ -1,19 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template
 from decouple import config as env_config
 from flask_wtf import CSRFProtect
 
 from .extensions import  mail
 
 
-def create_app(config_class=None):
+def create_app(config_class='electro.config.DevelopmentConfig'):
     app = Flask(__name__)
-
-    if config_class is None:
-        config_class = 'electro.config.DevelopmentConfig'
+    #
+    # if config_class is None:
+    #     config_class = 'electro.config.DevelopmentConfig'
 
     app.config.from_object(config_class)
-    csrf = CSRFProtect()
-    csrf.init_app(app)
 
     app.config['MAIL_SERVER'] = env_config('MAIL_SERVER')
     app.config['MAIL_PORT'] = env_config('MAIL_PORT',  cast=int)
@@ -30,6 +28,8 @@ def create_app(config_class=None):
     app.register_blueprint(main_bp)
     app.register_blueprint(api_bp)
 
-    csrf.exempt(api_bp)
+    @app.errorhandler(404)
+    def page_not_found(error):
+        return render_template('404.html')
 
     return app
