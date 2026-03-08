@@ -1,0 +1,639 @@
+{% extends "base.html" %}
+    {% block title %}Главная Спецэнергострой ПРО{% endblock %}
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main_page.css') }}">
+<style>
+/* ══ HERO2 ══ */
+.hero2 {
+ width: 100%;
+  min-height: 100svh;
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+/* ══ ЛЕВАЯ КОЛОНКА ══ */
+.hero2 .hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  padding: clamp(3rem, 8vh, 6rem) clamp(2rem, 5vw, 5rem);
+  background: var(--white);
+  position: relative;
+  z-index: 2;
+}
+
+.hero2 .hero-headline {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero2 .hero-line {
+  overflow: hidden;
+  line-height: 1;
+  display: block; /* сброс flex из main_page.css */
+  margin: 0;
+}
+
+.hero2 .hero-word {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5.5vw, 6rem);
+  font-weight: 700;
+  color: var(--earth);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  transform: translateY(110%);
+  animation: hero2WordReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero2 .hero-line:nth-child(1) .hero-word { animation-delay: 0.10s; }
+.hero2 .hero-line:nth-child(2) .hero-word { animation-delay: 0.18s; }
+.hero2 .hero-line:nth-child(3) .hero-word { animation-delay: 0.26s; }
+.hero2 .hero-line:nth-child(4) .hero-word { animation-delay: 0.34s; }
+.hero2 .hero-line:nth-child(5) .hero-word { animation-delay: 0.42s; }
+.hero2 .hero-line:nth-child(6) .hero-word { animation-delay: 0.50s; }
+
+.hero2 .hero-word.italic { font-style: italic; color: var(--bark); }
+.hero2 .hero-word.light  { font-weight: 300; }
+
+@keyframes hero2WordReveal {
+  to { transform: translateY(0); }
+}
+
+.hero2 .hero-sub {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--stone);
+  line-height: 1.75;
+  max-width: 34ch;
+  opacity: 0;
+  animation: hero2FadeUp 0.8s 0.6s ease forwards;
+}
+
+.hero2 .hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: hero2FadeUp 0.8s 0.75s ease forwards;
+}
+
+@keyframes hero2FadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══ ПРАВАЯ КОЛОНКА — REEL ══ */
+.hero2-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--bark);
+  height: 100%;
+}
+
+.hero2-reel-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.hero2-reel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: hero2Scroll 30s linear infinite;
+}
+
+.hero2-reel:hover { animation-play-state: paused; }
+
+@keyframes hero2Scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.reel2-item {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.reel2-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+  filter: saturate(0.85);
+}
+
+.reel2-item:hover img { transform: scale(1.03); }
+.reel-item--tall {
+  aspect-ratio: 3 / 4;
+}
+
+.reel-item--short {
+  aspect-ratio: 4 / 3;
+}
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero2">
+
+  <!-- Левая колонка -->
+  <div class="hero-left">
+
+    <div class="hero-headline">
+      <div class="hero-line"><span class="hero-word">Когда</span></div>
+      <div class="hero-line"><span class="hero-word italic light">мы создаём</span></div>
+      <div class="hero-line"><span class="hero-word">инженерию,</span></div>
+      <div class="hero-line"><span class="hero-word italic">мы ищем</span></div>
+      <div class="hero-line"><span class="hero-word">лучшую</span></div>
+      <div class="hero-line"><span class="hero-word light italic">гармонию.</span></div>
+    </div>
+
+    <p class="hero-sub">
+      Профессиональная прокладка сетей для жилых и коммерческих пространств. С 2020 года.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="hero-cta-primary">Начать проект</a>
+      <a href="#works" class="hero-cta-ghost">Смотреть работы →</a>
+    </div>
+
+
+  </div>
+
+  <!-- Правая колонка — вертикальный автоскролл фото -->
+  <div class="hero2-right">
+    <div class="hero2-reel-mask">
+      <div class="hero2-reel">
+
+        <!-- Замени src на реальные фото объектов -->
+        <div class="reel2-item reel-item--tall">
+          <img src="{{ url_for('static', filename='image/1.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short">
+          <img src="{{ url_for('static', filename='image/2.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--tall">
+          <img src="{{ url_for('static', filename='image/3.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short">
+          <img src="{{ url_for('static', filename='image/4.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--tall">
+          <img src="{{ url_for('static', filename='image/5.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short">
+          <img src="{{ url_for('static', filename='image/6.png') }}" alt="Здесь будет название">
+        </div>
+
+        <!-- дубли для бесшовного скролла -->
+        <div class="reel2-item reel-item--tall" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/1.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/2.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--tall" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/3.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/4.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--tall" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/5.png') }}" alt="Здесь будет название">
+        </div>
+        <div class="reel2-item reel-item--short" aria-hidden="true">
+          <img src="{{ url_for('static', filename='image/6.png') }}" alt="Здесь будет название">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- STATEMENT -->
+<section class="statement">
+  <div class="stmt-label reveal">О компании</div>
+  <div class="stmt-body">
+    <p class="stmt-text reveal">
+      Мы убеждены: инженерные сети — <em>это тихая архитектура </em> пространства. Они задают ритм, создают комфорт и обеспечивают безопасность на десятилетия.
+    </p>
+    <div class="stmt-numbers">
+      <div class="sn-item reveal">
+        <div class="sn-num">6</div>
+        <div class="sn-label">Лет практики</div>
+      </div>
+      <div class="sn-item reveal rd1">
+        <div class="sn-num">1 000</div>
+        <div class="sn-label">Объектов</div>
+      </div>
+      <div class="sn-item reveal rd2">
+        <div class="sn-num">15+</div>
+        <div class="sn-label">Специалистов в штате</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="proj-header reveal">
+    <h2>Реализованные объекты</h2>
+    <span>2020 — 2025</span>
+  </div>
+
+  <div class="grid">
+
+    <div class="proj pa reveal">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c1" style="aspect-ratio:16/10;">
+          <span class="ghost-num dark">I</span>
+          <img src="{{ url_for('static', filename='image/1.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Здание Красивое</h3><p>Умный дом · Логойск, 2023</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Подстанция</div>
+        <div class="proj-caption-meta">Технология — Компания ООО Монтаж, Логойск</div>
+      </div>
+    </div>
+
+    <div class="proj pb reveal reveal-delay-1">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c2" style="aspect-ratio:4/5;">
+          <span class="ghost-num light">II</span>
+          <img src="{{ url_for('static', filename='image/2.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Квартира</h3><p>Освещение · Минск, 2023</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Квартира в ЖК</div>
+        <div class="proj-caption-meta">Дизайнерское освещение — Минск</div>
+      </div>
+    </div>
+
+    <div class="proj pc reveal">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c3" style="aspect-ratio:4/5;">
+          <span class="ghost-num light">III</span>
+          <img src="{{ url_for('static', filename='image/3.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Завод Восток</h3><p>Промышленная электрика · Витебск, 2022</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Завод Восток</div>
+        <div class="proj-caption-meta">Промышленная электрика — Витебск</div>
+      </div>
+    </div>
+
+    <div class="proj pd reveal reveal-delay-1">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c4" style="aspect-ratio:16/9;">
+          <span class="ghost-num dark">IV</span>
+          <img src="{{ url_for('static', filename='image/4.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>ЖК Северный</h3><p>Монтаж под ключ · Минск, 2024</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">ЖК Северный — 10 квартир</div>
+        <div class="proj-caption-meta">Полная электрификация — А100, Минск</div>
+      </div>
+    </div>
+
+    <div class="proj pe reveal">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c5" style="aspect-ratio:4/3;">
+          <span class="ghost-num light">V</span>
+          <img src="{{ url_for('static', filename='image/5.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Отель Свислочь</h3><p>Умный свет · Логоза, 2023</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Отель Свислочь</div>
+        <div class="proj-caption-meta">Атмосферное освещение — Логоза</div>
+      </div>
+    </div>
+
+    <div class="proj pf reveal reveal-delay-1">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c6" style="aspect-ratio:4/3;">
+          <span class="ghost-num dark">VI</span>
+          <img src="{{ url_for('static', filename='image/6.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Офис</h3><p>Автоматизация · Минск, 2024</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Офис — 4 200 м²</div>
+        <div class="proj-caption-meta">Умное пространство — Минск</div>
+      </div>
+    </div>
+
+    <div class="proj pg reveal">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c7" style="aspect-ratio:3/4;">
+          <span class="ghost-num light">VII</span>
+          <img src="{{ url_for('static', filename='image/7.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>Канализация</h3><p>Умный дом · 2024</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">Канализация</div>
+        <div class="proj-caption-meta">Комплексная автоматизация — 480 м²</div>
+      </div>
+    </div>
+
+    <div class="proj ph reveal reveal-delay-1">
+      <div class="proj-img-wrap">
+        <div class="proj-placeholder c8" style="aspect-ratio:16/10;">
+          <span class="ghost-num dark">VIII</span>
+          <img src="{{ url_for('static', filename='image/8.png') }}" alt="Здесь будет название">
+          <div class="proj-overlay">
+            <div><h3>ТЦ Галерея</h3><p>Коммерческая электрика · 2022</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="proj-caption">
+        <div class="proj-caption-title">ТЦ Галерея — 18 000 м²</div>
+        <div class="proj-caption-meta">Электроснабжение — Логойск</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="svc-head reveal">
+    <h2 class="svc-title">Наши<br><em>услуги</em></h2>
+    <p class="svc-note">Комплекс инженерных работ под ключ. Для каждого объекта — продуманное решение и прозрачная смета.</p>
+  </div>
+  <div class="svc-list reveal">
+    <div class="svc-item">
+      <div class="svc-n">01</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_proekt') }}">Проектирование</a></div>
+        <div class="svc-sub">Электро-, газо-, водоснабжение и канализация</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>По проекту</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">02</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_electro') }}">Электроcнабжение</a></div>
+        <div class="svc-sub">Сети, освещение, щиты, КЛ, ТП, ВРУ</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>По техзаданию</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">03</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_electro') }}">Высоковольтные работы</a></div>
+        <div class="svc-sub">Трансформаторы, ячейки 6–10 кВ, РУ</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>Объекты любой сложности</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">04</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_gas') }}">Газоснабжение</a></div>
+        <div class="svc-sub">Монтаж, подключение, испытания</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>Сдача в газовые службы</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">05</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_water') }}">Водоснабжение и канализация</a></div>
+        <div class="svc-sub">Прокладка сетей, колодцы, подключение</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>По проекту</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">06</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_lab') }}">Лаборатория электрофизических измерений</a></div>
+        <div class="svc-sub">Измерения, проверки, испытания, тепловизионный контроль</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>Выезд специалиста</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+    <div class="svc-item">
+      <div class="svc-n">07</div>
+      <div class="svc-info">
+        <div class="svc-name"><a href="{{ url_for('main.get_services') }}">Аренда техники</a></div>
+        <div class="svc-sub">Кран-манипулятор, мини-экскаваторы, бурильно-крановая машина</div>
+      </div>
+      <div class="svc-price">Индивидуально<small>Выезд специалиста</small></div>
+      <div class="svc-arr">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-wrap reveal">
+  <div class="quote-mark">"</div>
+  <p class="quote-body">Хорошие инженерные системы незаметны — они просто работают, создавая пространство, в котором всё функционирует так, как должно.</p>
+  <p class="quote-src">Спецэнергострой ПРО — Принципы работы</p>
+</div>
+<!-- PROCESS -->
+<section id="process" class="process">
+  <div class="process-head">
+    <div class="reveal">
+      <h2 class="process-title">Как мы<br><em>работаем</em></h2>
+    </div>
+    <p class="svc-note">Отлаженный процесс, ясные этапы и стабильные сроки — так мы обеспечиваем качество.</p>
+  </div>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-n">01</div>
+      <div class="step-title">Выезд и консультация</div>
+      <p class="step-text">Инженер осматривает объект, фиксирует требования и составляет детальную смету. </p>
+      <div class="step-dur">Бесплатно · 1–2 дня</div>
+    </div>
+    <div class="step">
+      <div class="step-n">02</div>
+      <div class="step-title">Проект и договор</div>
+      <p class="step-text">Разрабатываем проект, утверждаем вместе. Сроки, стоимость и гарантии — в договоре.</p>
+      <div class="step-dur">1–3 рабочих дня</div>
+    </div>
+    <div class="step">
+      <div class="step-n">03</div>
+      <div class="step-title">Монтаж</div>
+      <p class="step-text">Монтаж выполняется по этапам, с соблюдением технологии и установленного графика.</p>
+      <div class="step-dur">По графику проекта</div>
+    </div>
+    <div class="step">
+      <div class="step-n">04</div>
+      <div class="step-title">Сдача объекта</div>
+      <p class="step-text">Тестируем все системы. Подписываем акт приёмки.</p>
+      <div class="step-dur">Передача объекта</div>
+    </div>
+  </div>
+</section>
+
+<!-- отзывы -->
+<section class="testimonials">
+  <div class="test-head reveal">
+    <h2>Отзывы клиентов</h2>
+    <span>2020 — 2025</span>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <p class="test-body">«Отличная компания. Спасибо за оперативную и высоко профессиональную помощь.»</p>
+      <div class="test-name">Алексей</div>
+      <div class="test-role">Частный клиент</div>
+    </div>
+    <div class="test-card reveal rd2">
+      <p class="test-body">«Отличная электромонтажная организация. Профессионалы своего дела.»</p>
+      <div class="test-name">Юрий</div>
+      <div class="test-role">Частный клиент</div>
+    </div>
+    <div class="test-card reveal rd1">
+      <p class="test-body">«В целом не плохо, но не высший пилотаж, хотя высший пилотаж в РБ нати сложновато, в любой сфере. Обратился с просьбой срочно сделать план линии и провести измерения - был приятно удивлен, сделали быстро и точно. Спасибо огромное благодарю!!!!»</p>
+      <div class="test-name">Sergey Kostylev</div>
+      <div class="test-role">Частный клиент</div>
+    </div>
+    <div class="test-card reveal rd2">
+      <p class="test-body">«Все отлично было сделано !»</p>
+      <div class="test-name">Павел Беленков</div>
+      <div class="test-role">Частный клиент</div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <!-- Переключатель темы -->
+
+  <div class="reveal">
+    <p class="con-eyebrow">Начать проект</p>
+
+    <div class="con-title-wrap">
+    <h2 class="con-title">Давайте<br>обсудим<br><em>проект</em></h2>
+
+<div class="reading-lamp" id="themeToggle">
+  <div class="rl-shade">
+    <div class="rl-bulb"></div>
+  </div>
+  <div class="rl-neck"></div>
+  <div class="rl-stem"></div>
+  <div class="rl-base"></div>
+  <div class="rl-beam"></div>
+  <span class="rl-hint">включи</span>
+</div>
+ </div>
+
+    <div class="con-details">
+      <div class="con-row"><span>Телефон</span><a href="tel:+375296262485" class="con-val">+375 29 626-24-85</a></div>
+      <div class="con-row"><span>Email</span><a href="mailto:hello_electro@gmail.com" class="con-val">hello_electro@gmail.com</a></div>
+      <div class="con-row"><span>Telegram</span><a href="https://t.me/aaavdrug" class="con-val">@aaavdrug</a></div>
+      <div class="con-row con-row--address"><span>Адрес</span><span class="con-val">г. Логойск, ул. Янки Купалы, д. 12A-4</span></div>
+    </div>
+
+  </div>
+
+  <form id="feedback-form" data-url="{{ url_for('api.post_feedback') }}" method="post" class="con-form reveal" onsubmit="return false;">
+    <div class="f-row">
+    <div class="f-field">
+      <label for="name" class="f-label">Ваше имя</label>
+      <input id="name" type="text" class="f-input" name="name" placeholder="Введите имя" required>
+    </div>
+      <div id="name-error" class="error"></div>
+    <div class="f-field">
+      <label for="phone" class="f-label">Телефон</label>
+      <input class="f-input" type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
+    </div>
+      </div>
+    <div id="phone-error" class="error"></div>
+      <div class="f-field">
+      <label for="email" class="f-label">Email</label>
+      <input class="f-input" type="email" name="email" id="email" placeholder="Ваша электронная почта">
+    </div>
+    <div id="email-error" class="error"></div>
+    <div class="f-field">
+      <label for="subject" class="f-label">Тема</label>
+    <input class="f-input" type="text" id="subject" name="subject" placeholder="Расскажите о проекте...">
+    </div>
+     <div id="subject-error" class="error"></div>
+      <div class="f-field">
+      <label class="f-label" for="message">Сообщение</label>
+    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="4" required></textarea>
+    </div>
+    <div id="message-error" class="error"></div>
+      <div class="f-field f-field--check">
+      <label class="agreement-wrapper f-label">
+          <input class="f-input agreement" type="checkbox" id="agreement" name="agreement" required>
+          <span class="agreem">Я даю согласие на обработку персональных данных в соответствии с <a href="{{ url_for('main.get_privacy') }}#personal-data" target="_blank" class="agree" rel="noopener">Политикой обработки персональных данных</a></span></label>
+    </div>
+      <div id="response-message-error_feedback" style="color:red;"></div>
+    <button type="submit" class="f-btn send-btn">
+      Отправить заявку
+      <div class="f-btn-circle">→</div>
+    </button>
+  </form>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+<script>
+document.getElementById('themeToggle').addEventListener('click', () => {
+  const contact = document.getElementById('contact');
+  const hint    = document.querySelector('.rl-hint');
+  const isLight = contact.classList.toggle('light');
+  hint.textContent = isLight ? 'выключи' : 'включи';
+});
+</script>
+{% endblock %}

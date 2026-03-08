@@ -9,7 +9,7 @@ api_bp = Blueprint('api', __name__)
 
 
 @api_bp.route('/api/feedback', methods=['POST'], strict_slashes=False)
-@api_bp.route('/contact/api/feedback', methods=['POST'], strict_slashes=False)
+# @api_bp.route('/contact/api/feedback', methods=['POST'], strict_slashes=False)
 def post_feedback():
     try:
         data = request.get_json()
