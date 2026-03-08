@@ -369,28 +369,28 @@
     <div class="f-row">
     <div class="f-field">
       <label for="name" class="f-label">Ваше имя</label>
-      <input id="name" type="text" class="f-input" name="name" placeholder="Введите имя" required>
+      <input id="name" type="text" class="f-input" name="name" placeholder="Введите имя" autocomplete="name" required maxlength="50">
     </div>
       <div id="name-error" class="error"></div>
     <div class="f-field">
       <label for="phone" class="f-label">Телефон</label>
-      <input class="f-input" type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" required>
+      <input class="f-input" type="tel" name="phone" id="phone" placeholder="Номер Вашего телефона" autocomplete="tel" required maxlength="25">
     </div>
       </div>
     <div id="phone-error" class="error"></div>
       <div class="f-field">
       <label for="email" class="f-label">Email</label>
-      <input class="f-input" type="email" name="email" id="email" placeholder="Ваша электронная почта">
+      <input class="f-input" type="email" name="email" id="email" placeholder="Ваша электронная почта" autocomplete="email" maxlength="100">
     </div>
     <div id="email-error" class="error"></div>
     <div class="f-field">
       <label for="subject" class="f-label">Тема</label>
-    <input class="f-input" type="text" id="subject" name="subject" placeholder="Расскажите о проекте...">
+    <input class="f-input" type="text" id="subject" name="subject" placeholder="Расскажите о проекте..." maxlength="50">
     </div>
      <div id="subject-error" class="error"></div>
       <div class="f-field">
       <label class="f-label" for="message">Сообщение</label>
-    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="4" required></textarea>
+    <textarea class="f-input" name="message" id="message" placeholder="Ваше сообщение" rows="4" required maxlength="500"></textarea>
     </div>
     <div id="message-error" class="error"></div>
       <div class="f-field f-field--check">
@@ -399,6 +399,7 @@
           <span class="agreem">Я даю согласие на обработку персональных данных в соответствии с <a href="{{ url_for('main.get_privacy') }}#personal-data" target="_blank" class="agree" rel="noopener">Политикой обработки персональных данных</a></span></label>
     </div>
       <div id="response-message-error_feedback" style="color:red;"></div>
+    <input type="text" name="website" style="display:none">
     <button type="submit" class="f-btn send-btn">
       Отправить заявку
       <div class="f-btn-circle">→</div>

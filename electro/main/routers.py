@@ -20,6 +20,7 @@ def get_main_page():
 @main_bp.route('/main_page1')
 def get_main_page1():
     return render_template('main_page1.html')
+
 @main_bp.route('/main_page2')
 def get_main_page2():
     return render_template('main_page2.html')

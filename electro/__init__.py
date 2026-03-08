@@ -1,18 +1,32 @@
 from flask import Flask, render_template
 from decouple import config as env_config
-from flask_wtf import CSRFProtect
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 from .extensions import  mail
+
+# limiter = Limiter(get_remote_address)
+limiter = Limiter(
+    key_func=get_remote_address,
+    storage_uri="redis://localhost:6379"
+)
 
 
 def create_app(config_class='electro.config.DevelopmentConfig'):
     app = Flask(__name__)
-    #
+
+    # Подключаем лимитер к приложению
+    limiter.init_app(app)
+
+    # Ограничение размера запроса
+    app.config["MAX_CONTENT_LENGTH"] = 1 * 1024 * 1024  # 1 MB
+
     # if config_class is None:
     #     config_class = 'electro.config.DevelopmentConfig'
 
     app.config.from_object(config_class)
 
+    # Настройка почты
     app.config['MAIL_SERVER'] = env_config('MAIL_SERVER')
     app.config['MAIL_PORT'] = env_config('MAIL_PORT',  cast=int)
     app.config['MAIL_USE_TLS'] = env_config('MAIL_USE_TLS', cast=bool)
@@ -21,6 +35,22 @@ def create_app(config_class='electro.config.DevelopmentConfig'):
     app.config['MAIL_DEFAULT_SENDER'] = env_config('MAIL_DEFAULT_SENDER')
 
     mail.init_app(app)
+
+    # Security headers
+    @app.after_request
+    def add_security_headers(resp):
+        resp.headers["X-Frame-Options"] = "DENY"
+        resp.headers["X-Content-Type-Options"] = "nosniff"
+        resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        resp.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+        resp.headers["Content-Security-Policy"] = (
+            "default-src 'self'; "
+            "script-src 'self'; "
+            "style-src 'self' 'unsafe-inline'; "
+            "img-src 'self' data:; "
+            "connect-src 'self'; "
+        )
+        return resp
 
     from electro.main.routers import main_bp
     from electro.api.routers import api_bp
