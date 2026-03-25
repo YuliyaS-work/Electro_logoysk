@@ -4,22 +4,43 @@ from pydantic import ValidationError
 
 from .schemas import Feedback
 from electro.extensions import mail
+from electro.__init__ import limiter
+
 
 api_bp = Blueprint('api', __name__)
 
 
 @api_bp.route('/api/feedback', methods=['POST'], strict_slashes=False)
+@limiter.limit("5/minute")
 def post_feedback():
+
+    # Проверка Content-Type
+    if request.content_type != "application/json":
+        abort(400)
+
+    # Honeypot
+    data = request.get_json(silent=True) or {}
+    if data.get("website"):
+        abort(400)
+
+    # Проверка Origin
+    origin = request.headers.get("Origin")
+    if origin not in {
+        "http://localhost:5000",
+        "http://127.0.0.1:5000",
+        "https://localhost",
+        "https://127.0.0.1"
+    }:
+        abort(403)
+
     # CSRF проверка
     cookie_token = request.cookies.get("csrftoken")
     header_token = request.headers.get("X-CSRF-Token")
 
     if not cookie_token or cookie_token != header_token:
-        abort(400, description="Invalid CSRF token")
+        abort(403, description="Invalid CSRF token")
 
     try:
-        data = request.get_json()
-
         validated_data = Feedback(**data)
 
         msg = Message(
