@@ -144,7 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            alert("Ваше сообщение успешно отправлено!");
+//            alert("Ваше сообщение успешно отправлено!");
+            document.getElementById('feedback-alert-message').textContent = 'Ваше сообщение успешно отправлено!';
+            document.getElementById('feedback-alert').classList.add('active');
+            setTimeout(() => {
+                 document.getElementById('feedback-alert').classList.remove('active');
+                 }, 4000);
             form.reset();
 
         } catch (err) {
