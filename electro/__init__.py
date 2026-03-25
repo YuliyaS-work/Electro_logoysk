@@ -36,21 +36,21 @@ def create_app(config_class='electro.config.DevelopmentConfig'):
 
     mail.init_app(app)
 
-    # Security headers
-    @app.after_request
-    def add_security_headers(resp):
-        resp.headers["X-Frame-Options"] = "DENY"
-        resp.headers["X-Content-Type-Options"] = "nosniff"
-        resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
-        resp.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
-        resp.headers["Content-Security-Policy"] = (
-            "default-src 'self'; "
-            "script-src 'self'; "
-            "style-src 'self' 'unsafe-inline'; "
-            "img-src 'self' data:; "
-            "connect-src 'self'; "
-        )
-        return resp
+    # # Security headers
+    # @app.after_request
+    # def add_security_headers(resp):
+    #     resp.headers["X-Frame-Options"] = "DENY"
+    #     resp.headers["X-Content-Type-Options"] = "nosniff"
+    #     resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+    #     resp.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+    #     resp.headers["Content-Security-Policy"] = (
+    #         "default-src 'self'; "
+    #         "script-src 'self'; "
+    #         "style-src 'self' 'unsafe-inline'; "
+    #         "img-src 'self' data:; "
+    #         "connect-src 'self'; "
+    #     )
+    #     return resp
 
     from electro.main.routers import main_bp
     from electro.api.routers import api_bp

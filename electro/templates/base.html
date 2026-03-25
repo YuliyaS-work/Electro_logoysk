@@ -8,9 +8,9 @@
 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     {% block styles %}{% endblock %}
-
+    <script> document.documentElement.classList.add('fonts-loading'); </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
@@ -21,7 +21,30 @@
 <nav>
   <a href="{{ url_for('main.get_main_page') }}" class="nav-logo">Спецэнергострой ПРО</a>
   <ul class="nav-links">
-    <li><a href="{{ url_for('main.get_main_page') }}#services">Услуги</a></li>
+<!--    <li><a href="{{ url_for('main.get_main_page') }}#services">Услуги</a></li>-->
+      <li class="nav-has-dropdown">
+  <a href="{{ url_for('main.get_main_page') }}#services">Услуги</a>
+  <div class="nav-dropdown">
+    <a href="{{ url_for('main.get_proekt') }}">
+      <span class="dd-name">Проектирование</span>
+    </a>
+    <a href="{{ url_for('main.get_electro') }}">
+      <span class="dd-name">Электроснабжение</span>
+    </a>
+    <a href="{{ url_for('main.get_gas') }}">
+      <span class="dd-name">Газоснабжение</span>
+    </a>
+    <a href="{{ url_for('main.get_water') }}">
+      <span class="dd-name">Водоснабжение и канализация</span>
+    </a>
+    <a href="{{ url_for('main.get_lab') }}">
+      <span class="dd-name">Лаборатория измерений</span>
+    </a>
+    <a href="{{ url_for('main.get_services') }}">
+      <span class="dd-name">Аренда техники</span>
+    </a>
+  </div>
+</li>
     <li><a href="{{ url_for('main.get_main_page') }}#process">Процесс</a></li>
     <li><a href="{{ url_for('main.get_main_page') }}#projects">Объекты</a></li>
     <li><a href="{{ url_for('main.get_contact') }}">Контакты</a></li>
@@ -68,5 +91,10 @@
 
   </div>
 </div>
+<script>
+  document.fonts.ready.then(function() {
+    document.documentElement.classList.remove('fonts-loading');
+  });
+</script>
 </body>
 </html>
