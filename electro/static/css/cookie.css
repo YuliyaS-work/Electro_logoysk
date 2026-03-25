@@ -1,60 +1,61 @@
-#cookies {
-  max-width: 960px;
+#cookies,
+#personal-data {
+  max-width: clamp(320px, 90%, 2000px);
   margin: 0 auto;
-  padding: 148px 52px 96px;
+  padding: clamp(80px, 10vw, 160px) clamp(16px, 5vw, 64px) clamp(40px, 8vw, 120px);
 }
 /* Главный заголовок */
 .payments {
   font-family: var(--serif);
-  font-size: clamp(22px, 4vw, 38px);
+  font-size: clamp(22px, 2.5vw, 60px);
   font-weight: 400;
   letter-spacing: 0.12em;
   color: var(--earth);
   text-transform: uppercase;
   line-height: 1.2;
-  margin-bottom: 52px;
+  margin-bottom: clamp(32px, 5vw, 72px);
   position: relative;
-  padding-bottom: 28px;
+  padding-bottom: clamp(16px, 2vw, 28px);
 }
 .payments::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 64px;
-  height: 2px;
+  width: clamp(32px, 5vw, 64px);
+  height: clamp(2px, 1vw, 4px);
   background: var(--bark);
 }
 /* Подзаголовки */
 .doc {
   font-family: var(--serif);
-  font-size: 18px;
+  font-size: clamp(18px, 1.8vw, 48px);
   font-weight: 400;
   letter-spacing: 0.1em;
   color: var(--earth);
   text-transform: uppercase;
-  margin: 56px 0 24px;
+  margin: clamp(32px, 4vw, 56px) 0 clamp(16px, 2vw, 24px);
   position: relative;
-  padding-bottom: 16px;
+  padding-bottom: clamp(8px, 1vw, 16px);
 }
 .doc::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 40px;
-  height: 1px;
+  width: clamp(20px, 2vw, 50px);
+  height: clamp(1px, 1vw, 3px);
   background: var(--bark);
 }
 /* Параграфы */
 .point {
   font-family: var(--sans);
-  font-size: 14px;
+  font-size: clamp(14px, 1vw, 28px);
   font-weight: 300;
   color: var(--earth);
   line-height: 1.8;
   letter-spacing: 0.04em;
-  margin-bottom: 20px;
+  margin-bottom: clamp(12px, 2vw, 20px);
 }
 .point strong {
   font-weight: 500;
@@ -64,19 +65,19 @@
 /* Списки cookie*/
 .coul {
   list-style: none;
-  margin: 0 0 28px 0;
+  margin-bottom: clamp(16px, 3vw, 28px);
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(6px, 1vw, 10px);
 }
 .coul .ulli {
-  font-size: 13px;
+  font-size: clamp(14px, 1vw, 28px);
   font-weight: 300;
   color: var(--stone);
   letter-spacing: 0.04em;
   line-height: 1.7;
-  padding-left: 22px;
+  padding-left: clamp(14px, 2vw, 28px);
   position: relative;
 }
 .coul .ulli::before {
@@ -90,19 +91,19 @@
 .cook-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 0 48px 0;
-  font-size: 13px;
+  margin-bottom: clamp(24px, 4vw, 48px);
+  font-size: clamp(14px, 1vw, 28px);
   font-family: var(--sans);
 }
 .cook-table thead tr { border-bottom: 2px solid var(--earth); }
 .cook-table thead th.name_cook {
-  font-size: 9px;
+  font-size: clamp(14px, 1vw, 28px);
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--stone);
   text-align: left;
-  padding: 0 16px 14px 0;
+  padding: 0 clamp(8px, 2vw, 20px) clamp(14px, 1vw, 16px) clamp(8px, 2vw, 20px);
 }
 .cook-table thead th.name_cook:last-child { padding-right: 0; }
 .cook-table tbody tr {
@@ -111,17 +112,18 @@
 }
 .cook-table tbody tr:hover { background: rgba(213, 214, 210, 0.25); }
 .cook-table tbody td.item_cookie {
-  padding: 16px 16px 16px 0;
+  padding: clamp(8px, 1vw, 16px) clamp(8px, 2vw, 16px);
   color: var(--earth);
   font-weight: 300;
   letter-spacing: 0.03em;
   line-height: 1.5;
   vertical-align: top;
+  font-size: clamp(14px, 1vw, 28px);
 }
 /* Первая колонка */
 .cook-table tbody td.item_cookie:first-child {
   font-family: 'Courier New', monospace;
-  font-size: 12px;
+  font-size: clamp(16px, 1vw, 30px);
   color: var(--bark);
   font-weight: 400;
   white-space: nowrap;
@@ -141,15 +143,15 @@
   align-items: center;
 }
 .browser-list li a {
-  font-size: 12px;
+  font-size: clamp(12px, 1vw, 26px);
   font-weight: 300;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--stone);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 0;
+  gap: clamp(10px, 2vw, 20px);
+  padding: clamp(4px, 1vw, 8px) 0;
   position: relative;
   transition: color 0.25s ease;
 }
@@ -168,10 +170,10 @@
 .browser-list li a:hover { color: var(--earth); }
 .browser-list li a:hover::after { transform: scaleX(1); }
 .browser-list li a i {
-  font-size: 14px;
+  font-size: clamp(12px, 1vw, 26px);
   color: var(--sand);
   transition: color 0.25s ease;
-  width: 18px;
+  width: clamp(18px, 1vw, 28px);
   text-align: center;
   flex-shrink: 0;
 }
@@ -201,24 +203,18 @@
 #cookies > *:nth-child(9) { animation-delay: 0.54s; }
 #cookies > *:nth-child(10) { animation-delay: 0.60s; }
 
-/* политика */
-#personal-data {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 148px 52px 96px;
-}
 /* Блок с реквизитами */
 .utv {
   font-family: var(--serif);
-  font-size: 15px;
+  font-size: clamp(14px, 1vw, 24px);
   font-weight: 400;
   letter-spacing: 0.14em;
   color: var(--stone);
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
-  margin-bottom: 52px;
-  padding: 24px 28px;
+  margin-bottom: clamp(32px, 4vw, 52px);
+  padding: clamp(16px, 2vw, 24px);
   border-left: 2px solid var(--bark);
   background: rgba(213, 214, 210, 0.2);
 }
@@ -230,10 +226,12 @@
   padding: 20px 24px;
   border-left: 1px solid var(--sand);
   background: rgba(213, 214, 210, 0.12);
+  line-height: 1.8;
+  margin-bottom: clamp(12px, 2vw, 20px);
 }
 .adres .point {
-  margin-bottom: 8px;
-  font-size: 13px;
+  font-size: clamp(14px, 1vw, 28px);
+  margin-bottom: clamp(6px, 1vw, 8px);
   color: var(--stone);
 }
 .adres .point:last-child { margin-bottom: 0; }
@@ -258,25 +256,16 @@
   transition: transform 0.3s ease;
 }
 .adres_p:hover::after { transform: scaleX(1); }
-/* Абзацы */
-#personal-data .point {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--earth);
-  line-height: 1.8;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
-}
+
 #personal-data .point:not([class*="1."]):not([class*="2."]) { padding-left: 0; }
 #personal-data .doc { margin-top: 64px; }
 #personal-data .doc:first-of-type { margin-top: 40px; }
 /* Дата обновления */
 .policy-footer {
   max-width: 960px;
-  margin: 0 auto 72px;
-  padding: 0 52px;
-  font-size: 11px;
+  font-size: clamp(10px, 0.8vw, 20px);
+  margin-bottom: clamp(24px, 3vw, 72px);
+  padding: 0 clamp(16px, 3vw, 52px);
   font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;

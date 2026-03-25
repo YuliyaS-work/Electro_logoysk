@@ -1,15 +1,15 @@
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 64px;
-  max-width: 1100px;
+  grid-template-columns: 1fr clamp(340px, 40%, 600px);
+  gap: clamp(32px, 5vw, 64px);
+  max-width: clamp(320px, 90%, 2000px);
   margin: 0 auto;
-  padding: 140px 52px 80px;
+  padding: clamp(80px, 10vw, 140px) clamp(24px, 5vw, 52px) clamp(40px, 5vw, 80px);
   align-items: start;
 }
 .about-text h1 {
   font-family: var(--serif);
-  font-size: clamp(22px, 3vw, 34px);
+  font-size: clamp(20px, 3vw, 80px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.04em;
@@ -34,7 +34,7 @@
 }
 .contacts p {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: clamp(12px, 1.2vw, 30px);
   font-weight: 300;
   color: var(--stone);
   letter-spacing: 0.04em;
@@ -44,7 +44,7 @@
 }
 .contacts p strong {
   display: block;
-  font-size: 9px;
+  font-size: clamp(10px, 1vw, 20px);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -60,8 +60,8 @@ a.ttt {
   gap: 14px;
   padding: 14px 0;
   border-bottom: 1px solid var(--sand);
-  color: var(--earth);
-  font-size: 13px;
+  color: var(--stone);
+  font-size: clamp(12px, 1.2vw, 30px);
   font-weight: 300;
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -77,6 +77,9 @@ a.ttt:hover .contact-icon { fill: var(--bark); }
   margin-top: 2px;
   fill: var(--stone);
   transition: fill .3s;
+  align-self: center;
+  width: clamp(16px, 1.2vw, 24px);
+  height: clamp(16px, 1.2vw, 24px);
 }
 .contact span,
 .ttt span { flex: 1; }
@@ -104,19 +107,20 @@ a.ttt:hover .contact-icon { fill: var(--bark); }
   transform: scale(1.01);
 }
 .certificate-caption {
-  font-size: 9px;
+  font-size: clamp(10px, 2vw, 20px);
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--stone);
 }
 /* ── REQUISITES ── */
 .pay_section {
-  max-width: 1100px;
+  max-width: clamp(320px, 60%, 1800px);
   margin: 0 auto;
   padding: 0 52px 72px;
+  align-self: center;
 }
 h2.payments {
-  font-size: 9px;
+  font-size: clamp(12px, 3vw, 30px);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -125,7 +129,7 @@ h2.payments {
 }
 .pay_pre {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: clamp(10px, 1.5vw, 28px);
   font-weight: 300;
   color: var(--earth);
   letter-spacing: 0.04em;
@@ -139,16 +143,20 @@ h2.payments {
 .pay_pre::before {
   content: '';
   position: absolute;
-  top: -1px; left: -1px;
-  width: 28px; height: 28px;
+  top: -1px;
+  left: -1px;
+  width: 28px;
+  height: 28px;
   border-top: 2px solid var(--bark);
   border-left: 2px solid var(--bark);
 }
 .pay_pre::after {
   content: '';
   position: absolute;
-  bottom: -1px; right: -1px;
-  width: 28px; height: 28px;
+  bottom: -1px;
+  right: -1px;
+  width: 28px;
+  height: 28px;
   border-bottom: 2px solid var(--bark);
   border-right: 2px solid var(--bark);
 }
@@ -161,28 +169,29 @@ h2.payments {
   font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--earth);
-  max-width: 1100px;
+  max-width: clamp(320px, 90%, 2000px);
   margin: 0 auto;
   padding: 0 52px 24px;
 }
 /* h2 "Где мы находимся" */
 .about-section ~ div > h2 {
-  font-family: var(--serif);
-  font-size: clamp(18px, 2.5vw, 26px);
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--earth);
-  max-width: 1100px;
+  font-size: clamp(12px, 3vw, 30px);
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  color: var(--bark);
+  text-transform: uppercase;
+  max-width: clamp(320px, 90%, 2000px);
   margin: 0 auto;
   padding: 0 52px 24px;
 }
+
 .map-photo-wrapper {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 2px;
-  max-width: 1100px;
-  margin: 0 auto 72px;
-  padding: 0 52px;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 32px);
+  max-width: clamp(320px, 90%, 2000px);
+  margin: 0 auto clamp(40px, 4vw, 72px);
+  padding: 0 clamp(20px, 4vw, 52px);
 }
 .map-section {
   position: relative;
@@ -201,7 +210,7 @@ h2.payments {
 .map-photo { overflow: hidden; }
 .map-photo img {
   width: 100%;
-  height: 420px;
+  max-height: 500px;
   object-fit: cover;
   display: block;
   filter: grayscale(20%);
@@ -211,12 +220,17 @@ h2.payments {
   filter: grayscale(0%);
   transform: scale(1.03);
 }
-
+.map-section iframe,
+.map-photo img {
+  width: 100%;
+  height: clamp(280px, 30vw, 420px);
+  object-fit: cover;
+}
 /* ── PHOTO GRID ── */
 .photo-section {
-  max-width: 1100px;
+  max-width: clamp(400px, 90%, 2000px);
   margin: 0 auto 80px;
-  padding: 0 52px;
+  padding: 52px;
 }
 .photo-grid {
   display: grid;
@@ -252,19 +266,19 @@ h2.payments {
     0 0 0 2px var(--bark);
 }
 .form-partners-wrapper {
-  max-width: 1100px;
-  margin: 0 auto 100px;
-  padding: 0 52px;
+  max-width: clamp(320px, 90%, 2000px);
+  margin: 0 auto clamp(60px, 6vw, 100px);
+  padding: 0 clamp(24px, 4vw, 80px);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: clamp(40px, 6vw, 120px);
   align-items: start;
 }
 /* ── FEEDBACK FORM ── */
 #feedback-form {
-  max-width: 640px;
-  margin: 0 auto 10px;
-  padding: 0 52px;
+  max-width: clamp(420px, 40vw, 860px);
+  margin: 0 auto clamp(6px, 1vw, 10px);
+  padding: 0 clamp(24px, 4vw, 80px);
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -273,20 +287,20 @@ h2.payments {
 #feedback-form::before {
   content: 'Обратная связь';
   display: block;
-  font-size: 9px;
+  font-size: clamp(12px, 3vw, 24px);
+  margin-bottom: clamp(24px, 2vw, 36px);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bark);
-  margin-bottom: 32px;
 }
 #feedback-form label {
-  font-size: 9px;
+  font-size: clamp(8px, 0.9vw, 18px);
+  margin-top: clamp(16px, 1.6vw, 28px);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--stone);
-  margin-top: 20px;
   margin-bottom: 6px;
   display: block;
 }
@@ -300,10 +314,10 @@ h2.payments {
   border-bottom: 1px solid var(--sand);
   color: var(--earth);
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: clamp(12px, 1.2vw, 26px);
+  padding: clamp(6px, 0.6vw, 12px) 0 clamp(8px, 0.8vw, 14px);
   font-weight: 300;
   letter-spacing: 0.04em;
-  padding: 8px 0 10px;
   outline: none;
   transition: border-color .3s;
   resize: none;
@@ -327,14 +341,14 @@ h2.payments {
 }
 .agreement {
   flex-shrink: 0;
-  width: 14px;
-  height: 14px;
+  width: clamp(14px, 0.9vw, 24px);
+  height: clamp(14px, 0.9vw, 24px);
   margin-top: 2px;
   accent-color: var(--bark);
   cursor: default !important;
 }
 .agreem {
-  font-size: 11px;
+  font-size: clamp(12px, 0.9vw, 18px);
   font-weight: 300;
   color: var(--stone);
   letter-spacing: 0.03em;
@@ -344,25 +358,26 @@ h2.payments {
   color: var(--bark);
   text-decoration: underline;
   text-underline-offset: 3px;
+  font-size: clamp(12px, 0.9vw, 20px);
 }
 #response-message-error_feedback {
-  font-size: 11px;
+  font-size: clamp(11px, 1.2vw, 18px);
   margin-top: 8px;
   letter-spacing: 0.04em;
 }
 /* Submit button */
 .send-btn {
   align-self: flex-start;
-  margin-top: 32px;
+  margin-top: clamp(24px, 2.5vw, 40px);
+  font-size: clamp(9px, 0.7vw, 18px);
+  padding: clamp(12px, 1.2vw, 20px) clamp(28px, 2.6vw, 56px);
   background: transparent;
   border: 1px solid var(--earth);
   color: var(--earth);
   font-family: var(--sans);
-  font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  padding: 14px 40px;
   cursor: none !important;
   transition: background .3s, color .3s, border-color .3s;
 }
@@ -371,6 +386,94 @@ h2.payments {
   border-color: var(--bark);
   color: var(--earth);
 }
+#feedback-form input[type="checkbox"].agreement {
+  appearance: none;
+  -webkit-appearance: none;
+  width: clamp(14px, 1.2vw, 28px);
+  height: clamp(14px, 1.2vw, 28px);
+  border: 1px solid var(--bark);
+  border-radius: 3px;
+  flex-shrink: 0;
+  align-self: center;
+  cursor: none;
+  position: relative;
+  transition: background 0.2s;
+}
+
+#feedback-form input[type="checkbox"].agreement:checked {
+  background: var(--bark);
+}
+
+#feedback-form input[type="checkbox"].agreement:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-size: clamp(9px, 0.8vw, 18px);
+  line-height: 1;
+}
+#feedback-alert {
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%) translateY(50px);
+  background: var(--white);
+  color: var(--black);
+  padding: clamp(24px, 3vw, 52px) clamp(28px, 4vw, 72px);
+  border-radius: clamp(10px, 1vw, 16px);
+  border-top: 2px solid var(--bark);
+  box-shadow: 0 8px 40px rgba(53,60,63,0.15);
+  z-index: 1100;
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 2vw, 40px);
+  pointer-events: none;
+  width: clamp(320px, 35vw, 800px);
+}
+#feedback-alert.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+#feedback-alert-message {
+   font-family: var(--serif);
+  font-size: clamp(15px, 1.4vw, 26px);
+  font-weight: 400;
+  color: var(--earth);
+  line-height: 1.5;
+}
+.feedback-alert-btn {
+  background: transparent;
+  color: var(--bark);
+  border: 1px solid var(--bark);
+  border-radius: 8px;
+  padding: clamp(10px, 0.8vw, 16px) clamp(24px, 2.5vw, 48px);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: clamp(10px, 0.7vw, 14px);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.feedback-alert-btn:hover {
+  background: var(--bark);
+  color: var(--white);
+}
+.feedback-alert-btn:active {
+  transform: scale(0.97);
+  background: linear-gradient(145deg, #aaa, #777);
+}
 /* ── PARTNERS ── */
 .partners-section {
   display: flex;
@@ -378,17 +481,17 @@ h2.payments {
   gap: 0;
 }
 .partners-label {
-  font-size: 9px;
+  font-size: clamp(12px, 3vw, 24px);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bark);
-  margin-bottom: 32px;
+  margin-bottom: clamp(24px, 2vw, 36px);
   display: block;
 }
 .partner-card {
   border: 1px solid var(--sand);
-  padding: 32px;
+  padding: clamp(24px, 2.5vw, 48px);
   position: relative;
   transition: border-color .3s;
 }
@@ -396,19 +499,20 @@ h2.payments {
   content: '';
   position: absolute;
   top: -1px; left: -1px;
-  width: 28px; height: 28px;
+  width: clamp(28px, 1.8vw, 36px);
+  /*height: clamp(28px, 1.8vw, 36px);*/
   border-top: 2px solid var(--bark);
   border-left: 2px solid var(--bark);
   transition: width .3s, height .3s;
 }
 .partner-card:hover { border-color: var(--stone); }
 .partner-card:hover::before {
-  width: 48px;
-  height: 48px;
+  width: clamp(48px, 3vw, 60px);
+  height: clamp(48px, 3vw, 60px);
 }
 .partner-card h3 {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 30px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.04em;
@@ -416,21 +520,21 @@ h2.payments {
   margin-bottom: 6px;
 }
 .partner-card .partner-sub {
-  font-size: 11px;
+  font-size: clamp(11px, 0.8vw, 18px);
   font-weight: 400;
   color: var(--bark);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: clamp(24px, 2vw, 32px);
   display: block;
 }
 .partner-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  padding: 10px 0;
+  font-size: clamp(12px, 1.2vw, 26px);
+  gap: clamp(8px, 1vw, 16px);
+  padding: clamp(10px, 0.8vw, 14px) 0;
   border-bottom: 1px solid var(--sand);
-  font-size: 13px;
   font-weight: 300;
   color: var(--earth);
   letter-spacing: 0.03em;
@@ -441,13 +545,30 @@ h2.payments {
   flex-shrink: 0;
   margin-top: 2px;
   fill: var(--stone);
+  width: clamp(16px, 1.2vw, 26px);
+  height: clamp(16px, 1.2vw, 26px);
+  align-self: center;
 }
 .partner-row a {
   color: var(--earth);
   transition: color .3s;
 }
 .partner-row a:hover { color: var(--bark); }
-
+/* Ошибка в форме для скрипта*/
+.f-field--error {
+  border-bottom-color: #e05a2b !important;
+}
+.f-field--error .f-label {
+  color: #e05a2b;
+}
+.f-hint {
+  display: block;
+  font-size: clamp(10px, 0.9vw, 18px);
+  letter-spacing: 0.15em;
+  color: #e05a2b;
+  margin-top: 4px;
+  min-height: 14px;
+}
 /* ── mobile ── */
 @media (max-width: 900px) {
   .about-section {

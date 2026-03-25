@@ -16,7 +16,7 @@ body {
   color: var(--black);
   font-family: var(--sans);
   font-weight: 300;
-  font-size: 14px;
+  font-size: clamp(13px, 1.2vw, 15px);
   letter-spacing: 0.03em;
   line-height: 1.6;
   overflow-x: hidden;
@@ -24,7 +24,10 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 em { font-style: italic; }
-
+.fonts-loading .hero-word {
+  opacity: 0;
+  animation: none;
+}
 /* ── CURSOR ── */
 .cur {
   position: fixed;
@@ -35,7 +38,9 @@ em { font-style: italic; }
 /* ── NAV ── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 200;
   display: flex;
   align-items: center;
@@ -48,83 +53,98 @@ nav {
 }
 .nav-logo {
   font-family: var(--serif);
-  font-size: 20px;
+  font-size: clamp(16px, 1.6vw, 34px);
   font-weight: 400;
   letter-spacing: 0.18em;
   color: var(--black);
 }
+.nav-logo:hover { color: var(--bark); }
 .nav-links {
   display: flex;
   gap: 44px;
   list-style: none;
 }
 .nav-links a {
-  font-size: 12px;
+  font-size: clamp(10px, 0.8vw, 20px);
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--black);
   position: relative;
-  padding-bottom: 3px;
 }
 .nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 1px;
-  background: var(--black);
+  background: var(--bark);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform .4s;
 }
 .nav-links a:hover::after { transform: scaleX(1); }
 .nav-contact {
-  font-size: 14px;
+  font-size: clamp(11px, 1vw, 24px);
   font-weight: 400;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--bark);
 }
+.nav-contact:hover { color: var(--black); }
 
 /* ── FOOTER ── */
 footer {
   background: var(--sand);
   border-top: 1px solid rgba(255,255,255,.05);
-  padding: 32px 52px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.f-logo {
- font-family: var(--serif);
- font-size: 14px;
- color: #333;
- letter-spacing: .1em;
+  padding: clamp(24px, 2vw, 48px) clamp(32px, 3vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .f-copy {
-  font-size: 9px;
+  font-size: clamp(8px, 0.8vw, 20px);
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: #2a2520;
+  color: var(--black);
 }
 .f-flinks {
   display: flex;
-  gap: 28px;
+  gap: clamp(16px, 1vw, 40px);
 }
 .f-flinks a {
-  font-size: 9px;
+  position: relative;
+  padding-bottom: 2px;
+  font-size: clamp(8px, 0.6vw, 16px);
   letter-spacing: .18em;
   text-transform: uppercase;
-  color: #2a2520;
+  color: var(--black);
   transition: color .2s;
 }
-.f-flinks a:hover { color: #666; }
+.f-flinks a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--bark);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
 
+.f-flinks a:hover::after { transform: scaleX(1); }
+.f-flinks a i {
+  color: var(--bark);
+  margin-right: 6px;
+  font-size: clamp(12px, 1vw, 20px);
+  vertical-align: middle;
+}
 /* ── 404 PAGE ── */
 .page-404 {
    min-height: 100vh;
    display: flex;
    align-items: center;
    justify-content: center;
-   padding: 0 52px;
+   padding: 0 clamp(32px, 4vw, 120px);
    position: relative;
    overflow: hidden;
 }
@@ -149,21 +169,21 @@ footer {
   background: var(--sand);
 }
 .line-break::before {
-  margin-left: 52px;
+  margin-left: clamp(32px, 4vw, 100px);
   margin-right: 0;
   max-width: calc(50% - 220px);
   transform-origin: left;
   animation: lineLeft 1s ease 0.6s both;
 }
 .line-break::after {
-  margin-right: 52px;
+  margin-right: clamp(32px, 4vw, 100px);
   margin-left: 0;
   max-width: calc(50% - 220px);
   transform-origin: right;
   animation: lineRight 1s ease 0.6s both;
 }
 .line-gap {
-  width: 440px;
+  width: clamp(320px, 28vw, 600px);
   flex-shrink: 0;
 }
 @keyframes lineReveal {
@@ -191,7 +211,7 @@ footer {
 /* Большие цифры */
 .err-code {
   font-family: var(--serif);
-  font-size: clamp(120px, 20vw, 200px);
+  font-size: clamp(120px, 20vw, 320px);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 0.9;
@@ -212,16 +232,16 @@ footer {
 /* Тонкий разделитель */
 .err-divider {
   width: 1px;
-  height: 48px;
+  height: clamp(48px, 4vw, 80px);
   background: linear-gradient(to bottom, var(--bark), transparent);
-  margin: 24px 0;
+  margin: clamp(16px, 2vw, 24px) 0;
   opacity: 0;
   animation: fadeUp 0.6s ease 0.7s both;
 }
 /* Заголовок */
 .err-title {
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: clamp(10px, 0.7vw, 16px);
   font-weight: 400;
   letter-spacing: 0.38em;
   text-transform: uppercase;
@@ -233,12 +253,12 @@ footer {
 /* Подпись */
 .err-sub {
   font-family: var(--sans);
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 18px);
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--stone);
   line-height: 1.7;
-  max-width: 340px;
+  max-width: clamp(340px, 28vw, 520px);
   opacity: 0;
   animation: fadeUp 0.6s ease 1.0s both;
 }
@@ -246,9 +266,9 @@ footer {
 .err-back {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-top: 44px;
-  font-size: 10px;
+  gap: clamp(10px, 1vw, 20px);
+  margin-top: clamp(32px, 3vw, 64px);
+  font-size: clamp(10px, 0.7vw, 14px);
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -271,7 +291,7 @@ footer {
    flex-shrink: 0;
 }
 .arr-line {
-   width: 28px;
+   width: clamp(28px, 2vw, 48px);
    height: 1px;
    background: var(--earth);
    transform-origin: right;
@@ -279,9 +299,9 @@ footer {
 }
 .err-coords {
    position: absolute;
-   bottom: 40px;
-   right: 52px;
-   font-size: 9px;
+   bottom: clamp(28px, 2.5vw, 56px);
+   right: clamp(32px, 4vw, 100px);
+   font-size: clamp(10px, 0.8vw, 16px);
    letter-spacing: 0.22em;
    text-transform: uppercase;
    color: var(--sand);
@@ -292,10 +312,10 @@ footer {
 }
 .err-year {
    position: absolute;
-   bottom: 40px;
-   left: 52px;
+   bottom: clamp(28px, 2.5vw, 56px);
+    left: clamp(32px, 4vw, 100px);
    font-family: var(--serif);
-   font-size: 11px;
+   font-size: clamp(10px, 0.8vw, 16px);
    letter-spacing: 0.2em;
    color: var(--sand);
    opacity: 0;
@@ -313,12 +333,12 @@ footer {
 /* ── COOKIE BANNER ── */
 .cookie-banner {
   position: fixed;
-  bottom: 32px;
+  bottom: clamp(20px, 2.5vw, 64px);
   left: auto;
-  right: 52px;
+  right: clamp(24px, 3vw, 80px);
   z-index: 1000;
   pointer-events: none;
-  width: 800px;
+  width: clamp(800px, 55vw, 1400px);
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -354,7 +374,7 @@ footer {
 }
 .cookie-title {
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: clamp(11px, 1vw, 28px);
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -363,7 +383,7 @@ footer {
 }
 .cookie-desc {
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: clamp(10px, 0.8vw, 24px);
   font-weight: 300;
   letter-spacing: 0.04em;
   color: var(--stone);
@@ -392,17 +412,19 @@ footer {
 .cookie-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: clamp(12px, 1vw, 30px);
   flex-shrink: 0;
 }
 .cookie-btn {
   font-family: var(--sans);
-  font-size: 9px;
+  font-size: clamp(8px, 0.6vw, 16px);
   font-weight: 400;
+  width: clamp(120px, 8vw, 180px);
+  height: clamp(40px, 3vw, 52px);
   letter-spacing: 0.26em;
   text-transform: uppercase;
   border: none;
-  padding: 10px 22px;
+  padding: clamp(8px, 0.6vw, 14px) clamp(16px, 1.2vw, 28px);
   cursor: none;
   transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
   white-space: nowrap;
@@ -417,13 +439,70 @@ footer {
 .cookie-btn--decline {
   background: transparent;
   color: var(--stone);
-  border: 1px solid var(--sand);
+  border: 1px solid var(--bark);
 }
 .cookie-btn--decline:hover {
-  border-color: var(--stone);
-  color: var(--earth);
+  border-color: var(--black);
+  color: var(--bark);
+}
+/* ── Nav dropdown ── */
+.nav-has-dropdown { position: relative; }
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: -20px;
+  width: clamp(300px, 18vw, 480px);
+  background: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+  z-index: 200;
 }
 
+/* тонкая акцентная линия сверху в цвет --bark */
+.nav-dropdown::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--bark);
+  opacity: 0.5;
+}
+
+.nav-has-dropdown:hover .nav-dropdown,
+.nav-has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: clamp(9px, 0.8vw, 16px) clamp(16px, 1.5vw, 32px);
+  font-family: var(--sans);
+  font-size: clamp(10px, 0.8vw, 18px);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,141,63,0.15);
+  transition: color 0.15s, padding-left 0.2s;
+}
+
+.nav-dropdown a:last-child { border-bottom: none; }
+
+.nav-dropdown a:hover {
+  color: var(--black);
+  padding-left: 30px;
+  border-bottom: 1px solid var(--bark);
+}
+.nav-dropdown a::after {
+  display: none;
+}
 /* ── MOBILE ── */
 @media (max-width: 768px) {
   .cookie-banner {
