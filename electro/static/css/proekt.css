@@ -8,37 +8,37 @@
   transform: translateY(0);
 }
 .des-hero {
-  padding: 140px 52px 80px;
-  max-width: 1100px;
+  padding: clamp(100px, 10vw, 180px) clamp(80px, 5vw, 100px) clamp(80px, 5vw, 100px);
+  max-width: clamp(1200px, 90vw, 2000px);
   margin: 0 auto;
   position: relative;
 }
 .des-hero__label {
-  font-size: 9px;
+  font-size: clamp(9px, 0.9vw, 18px);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bark);
   display: block;
-  margin-bottom: 20px;
-  margin-top: 60px;
+  margin-bottom: clamp(14px, 1.5vw, 28px);
+  margin-top: clamp(40px, 4vw, 80px);
 }
 .des-hero__title {
   font-family: var(--serif);
-  font-size: clamp(40px, 7vw, 88px);
+  font-size: clamp(40px, 7vw, 140px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.02em;
   line-height: 1.05;
-  margin-bottom: 28px;
+  margin-bottom: clamp(20px, 2vw, 40px);
 }
 .des-hero__sub {
-  font-size: 14px;
+  font-size: clamp(16px, 1vw, 24px);
   font-weight: 300;
   color: var(--stone);
   letter-spacing: 0.04em;
   line-height: 1.8;
-  max-width: 520px;
+  max-width: clamp(600px, 50vw, 1000px);
 }
 .des-hero__line {
   position: absolute;
@@ -50,20 +50,30 @@
 }
 .des-tabs {
   display: flex;
-  max-width: 1100px;
-  margin: 100px auto;
-  padding: 0 52px;
+  max-width: clamp(900px, 80vw, 1600px);
+  margin: clamp(80px, 5vw, 140px) auto;
+  padding: 0 clamp(40px, 4vw, 100px);
   border-bottom: 1px solid var(--sand);
   gap: 0;
+  z-index: 1;
+}
+.des-tabs-lab {
+  display: flex;
+  max-width: clamp(900px, 90vw, 2000px);
+  margin: clamp(80px, 5vw, 120px) auto;
+  padding: 0 clamp(40px, 4vw, 100px);
+  border-bottom: 1px solid var(--sand);
+  gap: 0;
+  z-index: 1;
 }
 .des-tab {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 24px 32px 24px 0;
-  margin-right: 32px;
+  gap: clamp(10px, 0.8vw, 30px);
+  padding: clamp(16px, 1.8vw, 32px) clamp(20px, 2vw, 40px) clamp(16px, 1.8vw, 32px) 0;
+  margin-right: clamp(20px, 2vw, 40px);
   color: var(--stone);
-  font-size: 11px;
+  font-size: clamp(13px, 0.8vw, 20px);
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -80,28 +90,28 @@
 }
 .des-tab__num {
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: clamp(12px, 1vw, 24px);
   color: var(--bark);
   font-style: italic;
 }
 /* ── SECTION ── */
 .des-section {
-  max-width: 1100px;
+  max-width: clamp(1200px, 90vw, 2000px);
   margin: 0 auto;
-  padding: 96px 52px;
+  padding: clamp(60px, 7vw, 140px) clamp(32px, 4vw, 100px);
   border-bottom: 1px solid var(--sand);
-  scroll-margin-top: 120px;
+  scroll-margin-top: clamp(100px, 0.8vw, 120px);
 }
 .des-section--alt { background: transparent; }
 .des-section__header {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
-  margin-bottom: 64px;
+  gap: clamp(20px, 2vw, 60px);
+  margin-bottom: clamp(40px, 5vw, 80px);
 }
 .des-section__num {
   font-family: var(--serif);
-  font-size: clamp(64px, 8vw, 100px);
+  font-size: clamp(40px, 8vw, 160px);
   font-weight: 400;
   color: var(--sand);
   line-height: 1;
@@ -115,12 +125,12 @@
 }
 .des-section__title {
   font-family: var(--serif);
-  font-size: clamp(24px, 3.5vw, 42px);
+  font-size: clamp(24px, 3.5vw, 64px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.03em;
   line-height: 1.2;
-  margin-bottom: 16px;
+  margin-bottom: clamp(12px, 1vw, 24px);
 }
 .des-section__line {
   width: 48px;
@@ -130,7 +140,7 @@
 .des-section__body {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 72px;
+  gap: clamp(40px, 5vw, 120px);
   align-items: start;
 }
 .des-section__body--reverse .des-section__image-wrap { order: 2; }
@@ -158,8 +168,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px 16px;
-  font-size: 9px;
+  font-size: clamp(12px, 0.8vw, 16px);
+  padding: clamp(8px, 0.8vw, 16px);
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -168,13 +178,13 @@
 }
 /* Content */
 .des-section__lead {
-  font-size: 15px;
+  font-size: clamp(18px, 1vw, 28px);
   font-weight: 300;
   color: var(--earth);
   line-height: 1.8;
   letter-spacing: 0.03em;
-  margin-bottom: 32px;
-  padding-bottom: 32px;
+  margin-bottom: clamp(20px, 2vw, 40px);
+  padding-bottom: clamp(20px, 2vw, 40px);
   border-bottom: 1px solid var(--sand);
 }
 /* List */
@@ -187,10 +197,10 @@
 }
 .des-list__item {
   display: flex;
-  gap: 14px;
-  padding: 13px 0;
+  padding: clamp(10px, 0.9vw, 18px) 0;
+  gap: clamp(10px, 1vw, 20px);
   border-bottom: 1px solid var(--sand);
-  font-size: 13px;
+  font-size: clamp(16px, 1vw, 26px);
   font-weight: 300;
   color: var(--earth);
   letter-spacing: 0.03em;
@@ -207,16 +217,16 @@
 .des-section__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: clamp(8px, 0.5vw, 15px);
 }
 .des-tag {
-  font-size: 9px;
+  font-size: clamp(10px, 0.5vw, 14px);
+  padding: clamp(5px, 0.5vw, 10px) clamp(10px, 1vw, 20px);
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--stone);
   border: 1px solid var(--sand);
-  padding: 6px 14px;
   transition: border-color .3s, color .3s;
 }
 .des-tag:hover {
@@ -224,36 +234,36 @@
   color: var(--bark);
 }
 .des-cta {
-  max-width: 1100px;
+  max-width: clamp(900px, 75vw, 1600px);
+  padding: clamp(60px, 7vw, 140px) clamp(32px, 4vw, 100px) clamp(80px, 9vw, 180px);
   margin: 0 auto;
-  padding: 96px 52px 120px;
   text-align: center;
 }
 .des-cta__label {
-  font-size: 9px;
+  font-size: clamp(12px, 0.8vw, 20px);
+  margin-bottom: clamp(14px, 1.5vw, 28px);
   font-weight: 500;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--bark);
   display: block;
-  margin-bottom: 20px;
 }
 .des-cta__title {
   font-family: var(--serif);
-  font-size: clamp(28px, 4vw, 52px);
+  font-size: clamp(28px, 4vw, 80px);
+  margin-bottom: clamp(14px, 1.5vw, 28px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.03em;
-  margin-bottom: 20px;
 }
 .des-cta__text {
-  font-size: 13px;
+  font-size: clamp(14px, 0.9vw, 22px);
   font-weight: 300;
   color: var(--stone);
   letter-spacing: 0.04em;
   line-height: 1.8;
-  max-width: 460px;
-  margin: 0 auto 44px;
+  max-width: clamp(360px, 30vw, 640px);
+  margin: 0 auto clamp(28px, 3vw, 56px);
 }
 .des-cta__btn {
   display: inline-block;
@@ -261,11 +271,11 @@
   border: 1px solid var(--earth);
   color: var(--earth);
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: clamp(12px, 0.8vw, 20px);
+  padding: clamp(12px, 1vw, 22px) clamp(32px, 3vw, 72px);
   font-weight: 500;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  padding: 16px 48px;
   text-decoration: none;
   transition: background .3s, color .3s, border-color .3s;
 }

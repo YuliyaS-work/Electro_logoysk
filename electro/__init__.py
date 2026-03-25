@@ -44,12 +44,14 @@ def create_app(config_class='electro.config.DevelopmentConfig'):
         resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         resp.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
         resp.headers["Content-Security-Policy"] = (
-            "default-src 'self'; "
-            "script-src 'self'; "
-            "style-src 'self' 'unsafe-inline'; "
-            "img-src 'self' data:; "
-            "connect-src 'self'; "
-        )
+        "default-src 'self'; "
+        "script-src 'self' 'unsafe-inline'; "
+        "style-src 'self' 'unsafe-inline'; "
+        "img-src 'self' data: https:; "
+        "frame-src https://yandex.by https://yandex.ru; "
+        "connect-src 'self'; "
+        "font-src 'self' data:; "
+    )
         return resp
 
     from electro.main.routers import main_bp

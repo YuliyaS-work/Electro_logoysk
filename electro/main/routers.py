@@ -17,14 +17,6 @@ def get_main_page():
     )
     return resp
 
-@main_bp.route('/main_page1')
-def get_main_page1():
-    return render_template('main_page1.html')
-
-@main_bp.route('/main_page2')
-def get_main_page2():
-    return render_template('main_page2.html')
-
 @main_bp.route('/contact')
 def get_contact():
     token = secrets.token_hex(16)
