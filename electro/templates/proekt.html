@@ -1,5 +1,12 @@
 {% extends "base.html" %}
-    {% block title %}Проектирование - Спецэнергострой ПРО{% endblock %}
+{% block title %}Проектирование - Спецэнергострой ПРО{% endblock %}
+{% block description %}Проектирование инженерных сетей: электроснабжение, газоснабжение, водоснабжение и канализация. Разработка проектной документации для жилых, коммерческих и промышленных объектов.{% endblock %}
+{% block keywords %}проектирование, электроснабжение, газоснабжение, водоснабжение, канализация, проектная документация, инженерные сети, Спецэнергострой ПРО, Логойск{% endblock %}
+{% block og_title %}Проектирование инженерных сетей — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Разработка проектной документации для объектов жилого, коммерческого и промышленного назначения. Полный комплекс проектирования инженерных систем.{% endblock %}
+{% block twitter_title %}Проектирование — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Проектирование инженерных сетей: электроснабжение, газоснабжение, водоснабжение и канализация.{% endblock %}
+
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/proekt.css') }}">
 {% endblock %}
@@ -43,10 +50,10 @@
 
   <div class="des-section__body">
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/5.png') }}"
-           alt="Проектирование электроснабжения"
+      <img src="{{ url_for('static', filename='image/proekt6.webp') }}"
+           alt="Проектная документация системы электроснабжения жилого здания"
            class="des-section__image">
-      <div class="des-section__image-caption">Электропроект</div>
+      <div class="des-section__image-caption">Проект электроснабжения</div>
     </div>
 
     <div class="des-section__content">
@@ -145,10 +152,10 @@
     </div>
 
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/5.png') }}"
-           alt="Проектирование газоснабжения"
+      <img src="{{ url_for('static', filename='image/proekt4.webp') }}"
+           alt="Проектирование газопровода"
            class="des-section__image">
-      <div class="des-section__image-caption">Газопровод</div>
+      <div class="des-section__image-caption">Проект газоснабжения</div>
     </div>
   </div>
 </section>
@@ -165,10 +172,10 @@
 
   <div class="des-section__body">
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/7.png') }}"
-           alt="Проектирование водоснабжения и канализации"
+      <img src="{{ url_for('static', filename='image/proekt1.webp') }}"
+           alt="Проектирование водоснабжения и канализации объекта"
            class="des-section__image">
-      <div class="des-section__image-caption">Водоснабжение</div>
+      <div class="des-section__image-caption">Проект водоснабжения и канализации</div>
     </div>
 
     <div class="des-section__content">

@@ -7,7 +7,6 @@
   opacity: 1;
   transform: translateY(0);
 }
-/*hero*/
 .elec-hero {
   padding: clamp(120px, 12vw, 220px) clamp(32px, 4vw, 100px) clamp(52px, 6vw, 120px);
   max-width: clamp(1100px, 80vw, 2000px);
@@ -50,7 +49,6 @@
   line-height: 1.9;
   letter-spacing: 0.04em;
 }
-/* ── SERVICES LIST ── */
 .elec-services {
   max-width: clamp(1000px, 80vw, 2000px);
   padding: clamp(40px, 5vw, 100px) clamp(24px, 3vw, 80px);
@@ -110,7 +108,6 @@
   line-height: 1.5;
   transition: color .3s;
 }
-/* ── PROJECTS ── */
 .projects {
   padding: clamp(28px, 3vw, 60px) clamp(32px, 4vw, 100px);
   background: var(--off);
@@ -158,6 +155,12 @@
   overflow: hidden;
   transition: transform .5s ease;
 }
+.proj-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .proj:hover .proj-inner { transform: scale(1.03); }
 .proj-info {
   position: absolute;
@@ -201,21 +204,68 @@
 .c5 { background: var(--stone); }
 .c6 { background: var(--sand); }
 
-/* ── mobile ── */
-@media (max-width: 900px) {
-  .elec-hero {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 120px 24px 60px;
+/* ── mobile ──*/
+@media (min-width:601px) and (max-width:1000px) {
+  .elec-hero { padding: clamp(90px, 5vw, 120px) 50px 40px; }
+  .elec-hero__lead { font-size: clamp(9px, 1.2vw, 19px); }
+  .elec-services {
+    max-width: 100%;
+    padding: clamp(32px, 5vw, 60px) clamp(24px, 6vw, 60px);
   }
-  .elec-services { padding: 60px 24px; }
-  .projects { padding: 60px 24px 80px; }
-  .pa, .pb, .pc, .pd, .pe, .pf { grid-column: span 12; }
+  .pa, .pb, .pc, .pd, .pe, .pf { grid-column: span 1; }
+  .projects {
+    padding: clamp(20px, 3vw, 40px) clamp(24px, 6vw, 60px);
+    box-sizing: border-box;
+  }
+  .proj-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: clamp(20px, 1vw, 50px) 0 clamp(10px, 3vw, 30px);
+    margin-bottom: clamp(10px, 4vw, 50px);
+  }
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+  .proj {
+    min-width: 0;
+    box-sizing: border-box;
+  }
+  .proj-inner {
+    width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 16/9 !important;
+  }
+  .proj-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .proj-info-title { font-size: clamp(10px, 0.8vw, 16px); }
+  .proj-info-meta {
+    font-size: clamp(8px, 1vw, 12px);
+    letter-spacing: 0.03em;
+  }
 }
-@media (max-width: 480px) {
-  .elec-grid { grid-template-columns: 1fr; }
-  .elec-item {
-    border-right: none !important;
-    padding-right: 0 !important;
+@media (max-width: 600px) {
+ .elec-hero {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    gap: 15px;
+    align-items: start;
+    padding: clamp(90px, 5vw, 120px) clamp(30px, 2vw, 40px) clamp(24px, 6vw, 60px); }
+  .elec-services { padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px); }
+  .projects { padding: clamp(16px, 2vw, 24px) 16px; box-sizing: border-box;}
+  .proj-header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    padding: clamp(20px, 1vw, 50px) clamp(10px, 2vw, 30px);
+    margin-bottom: clamp(10px, 4vw, 50px);
   }
+  .projects-grid { grid-template-columns: 1fr; }
+  .pa, .pb, .pc, .pd, .pe, .pf { grid-column: span 1; }
 }

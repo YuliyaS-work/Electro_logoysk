@@ -43,15 +43,41 @@ def create_app(config_class='electro.config.DevelopmentConfig'):
         resp.headers["X-Content-Type-Options"] = "nosniff"
         resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         resp.headers["Permissions-Policy"] = "geolocation=(), microphone=(), camera=()"
+        # resp.headers["Content-Security-Policy"] = (
+        #     "default-src 'self'; "
+        #     "script-src 'self' 'unsafe-inline'; "
+        #     "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; "
+        #     "img-src 'self' data: https:; "
+        #     "frame-src https://yandex.by https://yandex.ru; "
+        #     "connect-src 'self'; "
+        #     "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com; "
+        # )
         resp.headers["Content-Security-Policy"] = (
-        "default-src 'self'; "
-        "script-src 'self' 'unsafe-inline'; "
-        "style-src 'self' 'unsafe-inline'; "
-        "img-src 'self' data: https:; "
-        "frame-src https://yandex.by https://yandex.ru; "
-        "connect-src 'self'; "
-        "font-src 'self' data:; "
-    )
+            "default-src 'self'; "
+
+            "script-src 'self' 'unsafe-inline'; "
+
+            "style-src 'self' 'unsafe-inline' "
+            "https://fonts.googleapis.com "
+            "https://cdnjs.cloudflare.com; "
+
+            "font-src 'self' data: "
+            "https://fonts.gstatic.com "
+            "https://cdnjs.cloudflare.com; "
+
+            "img-src 'self' data: https:; "
+
+            "connect-src 'self'; "
+
+            "frame-src "
+            "https://yandex.by "
+            "https://yandex.ru "
+            "https://yandex.com; "
+
+            "object-src 'none'; "
+            "base-uri 'self'; "
+            "form-action 'self'; "
+        )
         return resp
 
     from electro.main.routers import main_bp
@@ -62,6 +88,10 @@ def create_app(config_class='electro.config.DevelopmentConfig'):
 
     @app.errorhandler(404)
     def page_not_found(error):
-        return render_template('404.html')
+        breadcrumb_list = [
+            {"name": "Главная", "url": "https://electro-logoysk.by/"},
+            {"name": "Страница не найдена", "url": "https://electro-logoysk.by/404"}
+        ]
+        return render_template('404.html', breadcrumb_list=breadcrumb_list), 404
 
     return app

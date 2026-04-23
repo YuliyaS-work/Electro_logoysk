@@ -8,7 +8,7 @@
   transform: translateY(0);
 }
 .des-hero {
-  padding: clamp(100px, 10vw, 180px) clamp(80px, 5vw, 100px) clamp(80px, 5vw, 100px);
+  padding: clamp(120px, 10vw, 180px) clamp(80px, 5vw, 100px) clamp(80px, 5vw, 100px);
   max-width: clamp(1200px, 90vw, 2000px);
   margin: 0 auto;
   position: relative;
@@ -25,7 +25,7 @@
 }
 .des-hero__title {
   font-family: var(--serif);
-  font-size: clamp(40px, 7vw, 140px);
+  font-size: clamp(36px, 7vw, 140px);
   font-weight: 400;
   color: var(--earth);
   letter-spacing: 0.02em;
@@ -50,16 +50,16 @@
 }
 .des-tabs {
   display: flex;
-  max-width: clamp(900px, 80vw, 1600px);
+  justify-content: center;
   margin: clamp(80px, 5vw, 140px) auto;
-  padding: 0 clamp(40px, 4vw, 100px);
+  padding: 0;
   border-bottom: 1px solid var(--sand);
   gap: 0;
   z-index: 1;
 }
 .des-tabs-lab {
   display: flex;
-  max-width: clamp(900px, 90vw, 2000px);
+  justify-content: center;
   margin: clamp(80px, 5vw, 120px) auto;
   padding: 0 clamp(40px, 4vw, 100px);
   border-bottom: 1px solid var(--sand);
@@ -94,7 +94,6 @@
   color: var(--bark);
   font-style: italic;
 }
-/* ── SECTION ── */
 .des-section {
   max-width: clamp(1200px, 90vw, 2000px);
   margin: 0 auto;
@@ -146,7 +145,6 @@
 .des-section__body--reverse .des-section__image-wrap { order: 2; }
 .des-section__body--reverse .des-section__content { order: 1; }
 .des-section__body--reverse > * { direction: ltr; }
-/* Image */
 .des-section__image-wrap {
   position: relative;
   overflow: hidden;
@@ -176,7 +174,6 @@
   color: var(--white);
   background: linear-gradient(transparent, rgba(53,60,63,0.6));
 }
-/* Content */
 .des-section__lead {
   font-size: clamp(18px, 1vw, 28px);
   font-weight: 300;
@@ -187,7 +184,6 @@
   padding-bottom: clamp(20px, 2vw, 40px);
   border-bottom: 1px solid var(--sand);
 }
-/* List */
 .des-list {
   list-style: none;
   display: flex;
@@ -271,7 +267,7 @@
   border: 1px solid var(--earth);
   color: var(--earth);
   font-family: var(--sans);
-  font-size: clamp(12px, 0.8vw, 20px);
+  font-size: clamp(10px, 0.8vw, 20px);
   padding: clamp(12px, 1vw, 22px) clamp(32px, 3vw, 72px);
   font-weight: 500;
   letter-spacing: 0.26em;
@@ -286,30 +282,108 @@
 }
 
 /* ── мобилка ── */
-@media (max-width: 900px) {
-  .des-hero { padding: 120px 24px 60px; }
+@media (min-width:601px) and (max-width:1000px) {
+  .des-hero {
+    padding: clamp(100px, 10vw, 120px) clamp(30px, 10vw, 50px) 24px;
+    max-width: 100%;
+  }
   .des-hero__line {
     left: 24px;
     right: 24px;
   }
-  .des-tabs {
-    padding: 0 24px;
-    gap: 0;
+  .des-hero__sub { max-width: 100%; }
+  .des-tabs,
+  .des-tabs-lab {
+    max-width: 100%;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px) 0;
+    margin: 0 auto;
     overflow-x: auto;
     scrollbar-width: none;
+    display: flex;
+    justify-content: flex-start;
   }
-  .des-tabs::-webkit-scrollbar { display: none; }
+  .des-tabs::-webkit-scrollbar,
+  .des-tabs-lab::-webkit-scrollbar { display: none; }
   .des-tab {
     white-space: nowrap;
-    padding: 20px 24px 20px 0;
+    padding: 16px 24px 16px 10px;
+    flex-shrink: 0;
+    font-size: clamp(12px, 1vw, 16px);
+    align-items: center;
   }
-  .des-section { padding: 64px 24px; }
+  .des-section {
+    max-width: 100%;
+    padding: 48px clamp(20px, 5vw, 50px);
+  }
   .des-section__body,
   .des-section__body--reverse {
     grid-template-columns: 1fr;
-    direction: ltr;
-    gap: 40px;
+    gap: 32px;
   }
-  .des-section__num { font-size: 52px; }
-  .des-cta { padding: 64px 24px 80px; }
+  .des-section__body--reverse .des-section__image-wrap { order: unset; }
+  .des-section__body--reverse .des-section__content { order: unset; }
+  .des-section__num { font-size: clamp(40px, 10vw, 72px); }
+  .des-section__header { gap: 16px; }
+  .des-cta {
+    max-width: 100%;
+    padding: 48px 24px 64px;
+  }
+  .des-cta__text { max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .des-hero {
+    padding: 88px clamp(30px, 10vw, 50px) 20px;
+    max-width: 100%;
+  }
+  .des-hero__line {
+    left: 24px;
+    right: 24px;
+  }
+  .des-hero__title { font-size: 28px; }
+  .des-hero__sub { max-width: 100%; font-size: 14px; }
+  .des-tabs,
+  .des-tabs-lab {
+    max-width: 100%;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px) 0;
+    margin: 0 auto;
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .des-tabs::-webkit-scrollbar,
+  .des-tabs-lab::-webkit-scrollbar { display: none; }
+  .des-tab {
+    white-space: nowrap;
+    padding: 16px 24px 16px 0;
+    flex-shrink: 0;
+    align-items: center;
+    font-size: clamp(10px, 0.8vw, 12px);
+  }
+  .des-section {
+    max-width: 100%;
+    padding: clamp(24px, 4vw, 40px) clamp(24px, 4vw, 40px);
+  }
+  .des-section__body,
+  .des-section__body--reverse {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .des-section__body--reverse .des-section__image-wrap { order: unset; }
+  .des-section__body--reverse .des-section__content { order: unset; }
+  .des-section__num { font-size: clamp(40px, 10vw, 72px); }
+  .des-section__lead { font-size: 16px; }
+  .des-section__title { font-size: clamp(23px, 6vw, 60px); }
+  .des-section__header { gap: 16px; }
+  .des-cta {
+    max-width: 100%;
+    padding: 40px 16px 56px;
+  }
+  .des-cta__text { max-width: 100%; }
+  .des-list__item { font-size: 13px; }
+  .des-section__tags { gap: 6px; }
+  .des-tag {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
 }

@@ -1,5 +1,15 @@
 {% extends "base.html" %}
-    {% block title %}Газоснабжение — Спецэнергострой ПРО{% endblock %}
+{% block title %}Газоснабжение — Спецэнергострой ПРО{% endblock %}
+{% block description %}Монтаж систем газоснабжения для жилых, административных и промышленных объектов. Прокладка газопроводов, подключение и сдача в газовые службы — Спецэнергострой ПРО, Логойск.{% endblock %}
+
+{% block keywords %}газоснабжение, монтаж газопровода, подключение к газовым службам, Спецэнергострой ПРО, Логойск, Беларусь{% endblock %}
+
+{% block og_title %}Газоснабжение — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Профессиональная установка и обслуживание систем газоснабжения для частных и коммерческих объектов. Качественно, безопасно и в срок.{% endblock %}
+
+{% block twitter_title %}Газоснабжение — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Монтаж систем газоснабжения: прокладка труб, подключение и сдача в газовую службу. Спецэнергострой ПРО — Логойск, Беларусь.{% endblock %}
+
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
 {% endblock %}
@@ -70,60 +80,66 @@
   <div class="projects-grid">
     <div class="proj pa reveal">
       <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <img src="{{ url_for('static', filename='image/gaz4.webp') }}" alt="Газорегуляторный пункт — оборудование для распределения и регулирования газа">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2023</div>
+            <div class="proj-info-title">Газорегуляторный пункт</div>
+            <div class="proj-info-meta">ГРП · Наружные сети · 2025</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pb reveal">
       <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/gaz1.webp') }}" alt="Узел ввода газа в частный дом: счётчик, регулятор давления, запорная арматура">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2023</div>
+            <div class="proj-info-title">Узел ввода газа в здание</div>
+            <div class="proj-info-meta">Ввод газа · Частный дом · 2026</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pc reveal">
       <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/gaz8.webp') }}" alt="ШРП — шкафной газорегуляторный пункт с системой контроля и регулирования газа">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2023</div>
+            <div class="proj-info-title">ШРП (газорегуляторный пункт)</div>
+            <div class="proj-info-meta">Газификация · 2025</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pd reveal">
       <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <img src="{{ url_for('static', filename='image/gaz3.webp') }}" alt="Подземная прокладка газопровода: стальная труба с муфтовым соединением в траншее перед засыпкой">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2024</div>
+            <div class="proj-info-title">Прокладка подземного газопровода</div>
+            <div class="proj-info-meta">Траншейная прокладка · 2024</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pe reveal">
       <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/gaz9.webp') }}" alt="Монтаж надземного газопровода по фасаду дома из газобетона">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2023</div>
+            <div class="proj-info-title">Монтаж надземного газопровода</div>
+            <div class="proj-info-meta">Фасадная прокладка · 2026</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pf reveal">
       <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/gaz6.webp') }}" alt="Смонтированный ШРПН с солнечной панелью и свечами сброса, огороженный сетчатым забором">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Газоснабжение · 2024</div>
+            <div class="proj-info-title">ШРПН с солнечной панелью</div>
+            <div class="proj-info-meta">Автономное питание · 2026</div>
           </div>
         </div>
       </div>

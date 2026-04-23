@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     name: v => /^[A-Za-zА-Яа-яЁё0-9 ,'-]{2,50}$/.test(v.trim()),
     phone: v => {
       // 1. Плюс обязателен (в начале или где угодно — как скажешь)
-      if (!v.includes('+')) return false;
+//     if (!v.includes('+')) return false;
 
       // 2. Разрешаем только цифры, пробелы, скобки, дефисы и плюс
       if (!/^[\d\s()+-]+$/.test(v)) return false;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const messages = {
     name:      'Введите имя (минимум 2 символа)',
-    phone:     'Введите номер телефонв в формате +375 XX XXX XXXX',
+    phone:     'Введите номер телефона в формате +375 XX XXX XXXX',
     email:     'Введите корректный email',
     message:   'Сообщение слишком короткое',
     agreement: 'Необходимо согласие на обработку данных',
@@ -144,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-//            alert("Ваше сообщение успешно отправлено!");
             document.getElementById('feedback-alert-message').textContent = 'Ваше сообщение успешно отправлено!';
             document.getElementById('feedback-alert').classList.add('active');
             setTimeout(() => {

@@ -1,5 +1,14 @@
 {% extends "base.html" %}
-    {% block title %}Водоснабжение и канализация — Спецэнергострой ПРО{% endblock %}
+{% block title %}Водоснабжение и канализация — Спецэнергострой ПРО{% endblock %}
+{% block description %}Выполняем прокладку водопроводных и канализационных сетей, монтаж колодцев, счетчиков воды и запорной арматуры. Работаем по всей Беларуси.{% endblock %}
+
+{% block keywords %}водоснабжение, канализация, монтаж водопроводных сетей, монтаж канализации, колодцы, счетчики воды, Спецэнергострой ПРО, Логойск{% endblock %}
+
+{% block og_title %}Водоснабжение и канализация — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Прокладка водопроводных и канализационных труб, установка колодцев и счетчиков воды, монтаж запорной арматуры по всей Беларуси.{% endblock %}
+
+{% block twitter_title %}Водоснабжение и канализация — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Прокладка водопроводных и канализационных труб, установка колодцев, монтаж счетчиков воды и запорной арматуры по всей Беларуси.{% endblock %}
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
 {% endblock %}
@@ -66,16 +75,18 @@
   <div class="projects-grid">
     <div class="proj pa reveal">
       <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <img src="{{ url_for('static', filename='image/dez1.jpg') }}"  alt="Дизельная электростанция резервного питания">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Водоснабжение · 2023</div>
+            <div class="proj-info-title">ДЭС резервного электроснабжения</div>
+            <div class="proj-info-meta">Электроснабжение · Водоснабжение · 2023</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pb reveal">
       <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/#') }}" alt="Реклоузер на воздушной линии электропередачи 10 кВ">
         <div class="proj-info">
           <div class="proj-info-content">
             <div class="proj-info-title">Здесь будет название</div>
@@ -86,16 +97,18 @@
     </div>
     <div class="proj pc reveal">
       <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/vru.jpg') }}" alt="Вводно-распределительное устройство скважины">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Водоснабжение · 2023</div>
+            <div class="proj-info-title">ВРУ водозаборной скважины</div>
+            <div class="proj-info-meta">Электроснабжение · Водоснабжение · 2023</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pd reveal">
       <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <img src="{{ url_for('static', filename='image/#') }}" alt="Реклоузер на воздушной линии электропередачи 10 кВ">
         <div class="proj-info">
           <div class="proj-info-content">
             <div class="proj-info-title">Здесь будет название</div>
@@ -106,6 +119,7 @@
     </div>
     <div class="proj pe reveal">
       <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/#') }}" alt="Реклоузер на воздушной линии электропередачи 10 кВ">
         <div class="proj-info">
           <div class="proj-info-content">
             <div class="proj-info-title">Здесь будет название</div>
@@ -116,10 +130,11 @@
     </div>
     <div class="proj pf reveal">
       <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/dez.jpg') }}" alt="Контейнерная дизельная электростанция">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Здесь будет название</div>
-            <div class="proj-info-meta">Канализация · 2024</div>
+            <div class="proj-info-title">Резервный источник электроснабжения</div>
+            <div class="proj-info-meta">Электроснабжение · 2024</div>
           </div>
         </div>
       </div>
