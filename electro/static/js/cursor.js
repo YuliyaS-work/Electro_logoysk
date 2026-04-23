@@ -26,7 +26,6 @@ cur.style.cssText = `
   pointer-events: none;
   z-index: 9999;
   transform: translate(-2px, -2px);
-  transition: none;
 `;
 
 cur.innerHTML = `
@@ -45,15 +44,14 @@ document.addEventListener('mousemove', e => {
 
 // Hover detection
 document.addEventListener('mouseover', e => {
-  const el = e.target.closest('a, button, [role="button"], input, label, select, textarea, [tabindex], [onclick]');
-  if (el) {
+  if (e.target.closest('a, button, [role="button"], input, label, select, textarea, [tabindex], [onclick]')) {
     curPath.style.fill = '#756867';
   }
 });
 
 document.addEventListener('mouseout', e => {
   const el = e.target.closest('a, button, [role="button"], input, label, select, textarea, [tabindex], [onclick]');
-  if (el) {
+  if (el && !el.contains(e.relatedTarget)) {
     curPath.style.fill = 'none';
   }
 });

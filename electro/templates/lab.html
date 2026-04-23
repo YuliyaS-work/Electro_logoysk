@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Лаборатория — Спецэнергострой ПРО{% endblock %}
+{% block description %}Лаборатория электрофизических измерений и тепловизионных обследований. Проверка дымоходов, вентиляционных каналов и аэродинамические испытания по всей Беларуси — Спецэнергострой ПРО, Логойск.{% endblock %}
+
+{% block keywords %}электрофизические измерения, тепловизионное обследование, проверка дымоходов, вентиляционные каналы, лаборатория Спецэнергострой ПРО, Логойск, Беларусь{% endblock %}
+
+{% block og_title %}Лаборатория — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Профессиональные измерения и обследования инженерных систем. Электрофизические испытания и тепловизионный контроль для жилых и коммерческих объектов.{% endblock %}
+
+{% block twitter_title %}Лаборатория — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Лаборатория электрофизических измерений и тепловизионных обследований. Проверка дымоходов, вентиляционных каналов и аэродинамические испытания по всей Беларуси.{% endblock %}
+
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/proekt.css') }}">
 {% endblock %}
@@ -43,10 +53,10 @@
 
   <div class="des-section__body">
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/5.png') }}"
-           alt="Электрофизические измерения"
+      <img src="{{ url_for('static', filename='image/lab1.webp') }}"
+           alt="Микроомметр ИКС-30А Челэнергоприбор для измерения переходных сопротивлений"
            class="des-section__image">
-      <div class="des-section__image-caption">ЭФИ в электроустановках</div>
+      <div class="des-section__image-caption">Измерение переходных сопротивлений</div>
     </div>
 
     <div class="des-section__content">
@@ -160,10 +170,10 @@
     </div>
 
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/5.png') }}"
-           alt="Проверка вентиляционных каналов"
+      <img src="{{ url_for('static', filename='image/lab3.webp') }}"
+           alt="Испытания изоляции кабелей прибором Сатурн-М в электролаборатории"
            class="des-section__image">
-      <div class="des-section__image-caption">Аэродинамические испытания</div>
+      <div class="des-section__image-caption">Испытания изоляции</div>
     </div>
   </div>
 </section>
@@ -180,8 +190,8 @@
 
   <div class="des-section__body">
     <div class="des-section__image-wrap">
-      <img src="{{ url_for('static', filename='image/5.png') }}"
-           alt="Тепловизионное обследование"
+      <img src="{{ url_for('static', filename='image/lab.webp') }}"
+           alt="Тепловизионное обследование электрооборудования и кабельных линий"
            class="des-section__image">
       <div class="des-section__image-caption">Тепловизионный контроль</div>
     </div>

@@ -1,5 +1,12 @@
 {% extends "base.html" %}
-    {% block title %}Электроснабжение — Спецэнергострой ПРО{% endblock %}
+{% block title %}Электроснабжение — Спецэнергострой ПРО{% endblock %}
+{% block description %}Профессиональное электроснабжение объектов: монтаж сетей, щитов, КЛ, ВРУ, ТП. Спецэнергострой ПРО — Логойск, Беларусь.{% endblock %}
+{% block keywords %}электроснабжение, монтаж электросетей, ВРУ, КЛ, ТП, Спецэнергострой ПРО, Логойск, Беларусь{% endblock %}
+{% block og_title %}Электроснабжение — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Комплексный монтаж и проектирование электроснабжения для жилых и коммерческих объектов. Качественно, безопасно и в срок.{% endblock %}
+{% block twitter_title %}Электроснабжение — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Выполняем электромонтажные работы на объектах I–IV классов сложности. Спецэнергострой ПРО — Логойск, Беларусь.{% endblock %}
+
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/electro.css') }}">
 {% endblock %}
@@ -81,60 +88,66 @@
   <div class="projects-grid">
     <div class="proj pa reveal">
       <div class="proj-inner c1" style="aspect-ratio:16/10;">
+        <img src="{{ url_for('static', filename='image/rlnd.webp') }}" alt="Линейный разъединитель наружной установки 10 кВ">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Особняк Соколиная Гора</div>
-            <div class="proj-info-meta">Умный дом · Москва, 2023</div>
+            <div class="proj-info-title">РЛНД-10 кВ</div>
+            <div class="proj-info-meta">РЛНД-10 кВ · Минская область, 2024</div>
           </div>
         </div>
         </div>
     </div>
     <div class="proj pb reveal">
       <div class="proj-inner c2" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/vl2.webp') }}" alt="Воздушная линия электропередачи">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Студия Loft 540</div>
-            <div class="proj-info-meta">Освещение · СПб, 2023</div>
+            <div class="proj-info-title">Воздушная линия на опорах</div>
+            <div class="proj-info-meta">ВЛ · Логойский район, 2025</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pc reveal">
       <div class="proj-inner c3" style="aspect-ratio:4/5;">
+        <img src="{{ url_for('static', filename='image/bktpb.webp') }}" alt="Блочная комплектная трансформаторная подстанция БКТПБ">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Завод Восток-М</div>
-            <div class="proj-info-meta">Промышленная электрика · Калуга</div>
+            <div class="proj-info-title">Монтаж БКТПБ</div>
+            <div class="proj-info-meta">Трансформаторная подстанция · Минск</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pd reveal">
       <div class="proj-inner c4" style="aspect-ratio:16/9;">
+        <img src="{{ url_for('static', filename='image/vl10kv.webp') }}" alt="Воздушная линия электропередачи ВЛ 10 кВ на опорах">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">ЖК Северное сияние — 240 квартир</div>
-            <div class="proj-info-meta">Монтаж под ключ · Москва, 2024</div>
+            <div class="proj-info-title">ВЛ 10 кВ</div>
+            <div class="proj-info-meta">Электросети · Воздушная линия · 10 кВ</div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pe reveal">
       <div class="proj-inner c5" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/kr1.webp') }}" alt="Контрольная коробка системы заземления здания">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Бутик-отель Birch</div>
-            <div class="proj-info-meta">Умный свет · Сочи, 2023</div>
+            <div class="proj-info-title">Узел заземления</div>
+            <div class="proj-info-meta">Система заземления · Молниезащита </div>
           </div>
         </div>
       </div>
     </div>
     <div class="proj pf reveal">
       <div class="proj-inner c6" style="aspect-ratio:4/3;">
+        <img src="{{ url_for('static', filename='image/reklouzer.webp') }}"  alt="Реклоузер на воздушной линии электропередачи 10 кВ">
         <div class="proj-info">
           <div class="proj-info-content">
-            <div class="proj-info-title">Офис Yandex Cloud — 4 200 м²</div>
-            <div class="proj-info-meta">Автоматизация · Москва, 2024</div>
+            <div class="proj-info-title">Реклоузер 10 кВ</div>
+            <div class="proj-info-meta">Автоматизация сети · ВЛ 10 кВ</div>
           </div>
         </div>
       </div>

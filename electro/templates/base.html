@@ -1,27 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Спецэнергострой ПРО{% endblock %}</title>
+    <title>{% block title %}Спецэнергострой ПРО — инженерные сети и электроснабжение{% endblock %}</title>
+
+    <meta name="description" content="{% block description %}Проектирование и строительство инженерных сетей: электроснабжение, газоснабжение, водоснабжение, лаборатория измерений. Спецэнергострой ПРО — Логойск.{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Спецэнергострой ПРО">
+    <meta name="keywords" content="{% block keywords %}электроснабжение, проектирование электросетей, ВЛ 10кВ, БКТПБ, монтаж ВРУ, инженерные сети, газоснабжение, водоснабжение, Логойск, Беларусь{% endblock %}">
+    <meta name="theme-color" content="#1b1b1b">
+
+    <link rel="canonical" href="{{ request.base_url }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+
+    <meta property="og:title" content="{% block og_title %}Спецэнергострой ПРО{% endblock %}">
+    <meta property="og:description" content="{% block og_desc %}Проектирование и строительство инженерных сетей{% endblock %}">
+    <meta property="og:site_name" content="Спецэнергострой ПРО">
+    <meta property="og:locale" content="ru_BY">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.url }}">
+    <meta property="og:image" content="https://electro-logoysk.by/static/image/log2.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Спецэнергострой ПРО{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_desc %}Проектирование и строительство инженерных сетей{% endblock %}">
+    <meta name="twitter:image" content="https://electro-logoysk.by/static/image/log2.webp">
+
+    <meta name="geo.region" content="BY">
+    <meta name="geo.placename" content="Логойск">
+    <meta name="geo.position" content="54.206;27.850">
+    <meta name="ICBM" content="54.206, 27.850">
+
+    <script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":["Organization","LocalBusiness"],
+ "name":"Спецэнергострой ПРО",
+ "url":"https://electro-logoysk.by",
+ "telephone":"+375296262485",
+    "email":"122011@tut.by",
+ "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"ул. Янки Купалы 12А-4",
+    "addressLocality":"Логойск",
+    "addressRegion":"Минская область",
+    "postalCode":"223141",
+    "addressCountry":"BY"
+  },
+  "openingHours":"Mo-Fr 08:00-17:00",
+  "foundingDate": "2020"
+}
+</script>
+
+    {% if breadcrumb_list %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {% for crumb in breadcrumb_list %}
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index }},
+          "name": "{{ crumb.name }}",
+          "item": "{{ crumb.url }}"
+        }
+          {% if not loop.last %},{% endif %}
+        {% endfor %}
+      ]
+    }
+    </script>
+    {% endif %}
+
+    {% block service_schema %}{% endblock %}
 
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='image/favicon.ico') }}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" href="{{ url_for('static', filename='image/favicon.ico') }}?v=2" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+
     {% block styles %}{% endblock %}
+
     <script> document.documentElement.classList.add('fonts-loading'); </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
 </head>
 <body>
+<h1 class="visually-hidden">Спецэнергострой ПРО — проектирование и монтаж инженерных сетей в Логойске</h1>
 <header>
 <!-- NAV -->
 <nav>
   <a href="{{ url_for('main.get_main_page') }}" class="nav-logo">Спецэнергострой ПРО</a>
   <ul class="nav-links">
-<!--    <li><a href="{{ url_for('main.get_main_page') }}#services">Услуги</a></li>-->
       <li class="nav-has-dropdown">
   <a href="{{ url_for('main.get_main_page') }}#services">Услуги</a>
   <div class="nav-dropdown">
@@ -50,6 +128,10 @@
     <li><a href="{{ url_for('main.get_contact') }}">Контакты</a></li>
   </ul>
   <div class="nav-contact"><a href="tel:+375296262485">+375 29 626-24-85</a></div>
+
+  <button class="nav-burger" id="nav-burger" aria-label="Открыть меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 </header>
 <div class="cur" id="cur"></div>
@@ -96,5 +178,27 @@
     document.documentElement.classList.remove('fonts-loading');
   });
 </script>
+<script>
+const burger = document.getElementById('nav-burger');
+const navLinks = document.querySelector('.nav-links');
+
+burger.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('is-open');
+  burger.classList.toggle('is-open');
+  burger.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    burger.classList.remove('is-open');
+    document.body.style.overflow = '';
+  });
+});
+
+burger.addEventListener('mouseenter', () => burger.classList.add('is-hover'));
+burger.addEventListener('mouseleave', () => burger.classList.remove('is-hover'));
+    </script>
 </body>
 </html>

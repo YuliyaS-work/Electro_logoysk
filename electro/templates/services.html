@@ -1,5 +1,11 @@
 {% extends "base.html" %}
-    {% block title %}Аренда техники — Спецэнергострой ПРО{% endblock %}
+{% block title %}Аренда техники — Спецэнергострой ПРО{% endblock %}
+{% block description %}Предоставляем в аренду мини-экскаваторы, бурильно-крановые машины и краны-манипуляторы. Работаем по всей Беларуси.{% endblock %}
+{% block keywords %}аренда техники, мини-экскаватор, бурильно-крановая машина, кран-манипулятор, спецтехника, Спецэнергострой ПРО, Логойск{% endblock %}
+{% block og_title %}Аренда спецтехники — Спецэнергострой ПРО{% endblock %}
+{% block og_desc %}Предоставляем в аренду мини-экскаваторы, бурильно-крановые машины и краны-манипуляторы. Работаем по всей Беларуси.{% endblock %}
+{% block twitter_title %}Аренда техники — Спецэнергострой ПРО{% endblock %}
+{% block twitter_desc %}Аренда мини-экскаваторов, бурильно-крановых машин и кранов-манипуляторов по всей Беларуси.{% endblock %}
 {% block styles %}
     <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">
 {% endblock %}
@@ -16,7 +22,7 @@
 
   <div class="row row-1">
     <div class="photo">
-      <img src="{{ url_for('static', filename='image/1avto.png') }}" alt="Мини-экскаватор SANY SY26U">
+      <img src="{{ url_for('static', filename='image/1avto.webp') }}" alt="Мини-экскаватор SANY SY26U">
     </div>
     <div class="desc" data-num="01">
       <span class="service-num">Услуга 01</span>
@@ -24,7 +30,7 @@
       <p class="desc-text">Аренда мини-экскаватора гусеничного SANY SY26U — компактная машина для работы в стеснённых условиях.</p>
       <a href="#" class="desc-cta"
       data-title="Мини-экскаватор SANY SY26U"
-   data-img="{{ url_for('static', filename='image/1avto.png') }}"
+   data-img="{{ url_for('static', filename='image/1avto.webp') }}"
    data-text="Мини-экскаватор гусеничный SANY SY26U — компактная машина для работы в стеснённых условиях. Эксплуатационная масса — 2.68 т., мощность двигателя — 15,2 кВт / 20,67 л.с., объём ковша — 0,06 м³. Подходит для рытья траншей, котлованов, планировочных работ на узких участках.">
         Узнать подробнее</a>
     </div>
@@ -32,7 +38,7 @@
 
   <div class="row row-2">
     <div class="photo">
-        <img src="{{ url_for('static', filename='image/2avto.png') }}" alt="Мини-экскаватор Volvo EC 14">
+        <img src="{{ url_for('static', filename='image/2avto.webp') }}" alt="Мини-экскаватор Volvo EC 14">
     </div>
     <div class="desc" data-num="02">
       <span class="service-num">Услуга 02</span>
@@ -40,7 +46,7 @@
       <p class="desc-text">Аренда мини-экскаватора гусеничного Volvo EC 14 — лёгкая и манёвренная машина массой 1500 кг.</p>
       <a href="#" class="desc-cta"
       data-title="Мини-экскаватор Volvo EC 14"
-   data-img="{{ url_for('static', filename='image/2avto.png') }}"
+   data-img="{{ url_for('static', filename='image/2avto.webp') }}"
    data-text="Мини-экскаватор гусеничный Volvo EC 14 — лёгкая и манёвренная машина массой 1500 кг. Глубина копания 2010-2160 мм, объем ковша 0,05 м3, мощность 11,4 кВт, радиус копания 3410-3560 мм.">
         Узнать подробнее</a>
     </div>
@@ -48,14 +54,14 @@
 
   <div class="row row-3">
     <div class="photo">
-        <img src="{{ url_for('static', filename='image/3avto.png') }}" alt="Бурильно-крановая машина БМ-205Д">
+        <img src="{{ url_for('static', filename='image/3avto.webp') }}" alt="Бурильно-крановая машина БМ-205Д">
     </div>
     <div class="desc" data-num="03">
       <span class="service-num">Услуга 03</span>
       <h2>Бурильно-крановая<br>машина БМ-205Д</h2>
       <p class="desc-text">Аренда бурильно-крановой машины БМ-205Д на базе трактора МТЗ-82 предназначена для бурения скважин и ям под столбы, опоры линий электропередач, заборы и фундаменты.</p>
       <a href="#" class="desc-cta" data-title="Бурильно-крановая машина БМ-205Д"
-   data-img="{{ url_for('static', filename='image/3avto.png') }}"
+   data-img="{{ url_for('static', filename='image/3avto.webp') }}"
    data-text="Бурильно-крановая машина БМ-205Д на базе трактора МТЗ-82 предназначена для бурения скважин и ям под столбы, опоры линий электропередач, заборы и фундаменты. Высокая проходимость трактора позволяет работать на грунтах со слабой несущей способностью и в труднодоступных местах.">
         Узнать подробнее</a>
     </div>
@@ -63,14 +69,14 @@
 
   <div class="row row-4">
     <div class="photo">
-        <img src="{{ url_for('static', filename='image/4avto.png') }}" alt="Кран-манипулятор МАЗ">
+        <img src="{{ url_for('static', filename='image/4avto.webp') }}" alt="Кран-манипулятор МАЗ">
     </div>
     <div class="desc" data-num="04">
       <span class="service-num">Услуга 04</span>
       <h2>Кран-манипулятор<br>МАЗ</h2>
       <p class="desc-text">Аренда крана-манипулятора МАЗ с буром и люлькой, что позволяет выполнять широкий спектр работ.</p>
       <a href="#" class="desc-cta" data-title="Кран-манипулятор МАЗ"
-   data-img="{{ url_for('static', filename='image/4avto.png') }}"
+   data-img="{{ url_for('static', filename='image/4avto.webp') }}"
    data-text="Кран-манипулятор МАЗ оснащён буровой установкой и монтажной люлькой, что позволяет выполнять широкий спектр работ: установку опор освещения и линий электропередач, погрузочно-разгрузочные операции, подъём персонала на высоту. Грузоподъёмность манипулятора на min/max вылете — 7500 / 350 кг, вылет стрелы (max) — 20 м.">Узнать подробнее</a>
     </div>
   </div>
