@@ -6,7 +6,7 @@ from pydantic_core import PydanticCustomError
 
 
 class Feedback(BaseModel):
-    name: str = Field(..., max_length=50)
+    name: str = Field(..., min_length=2, max_length=50)
     phone: str
     email: EmailStr | None = None
     subject: str = Field("Без темы", max_length=50)
@@ -35,6 +35,7 @@ class Feedback(BaseModel):
     #             'Email введён некорректно.Пожалуйста, проверьте формат.'
     #         )
     #     return v
+
     @field_validator("email", mode="before")
     def convert_empty_to_none(cls, v):
         if not v:  # пустая строка → None, EmailStr пропустит
@@ -65,7 +66,7 @@ class Feedback(BaseModel):
                 'phone.invalid_symbol',
                 'Номер содержит недопустимые символы. Введите номер в формате +375 XX XXX XXXX.'
             )
-        # number = ''.join(dgt for dgt in ph if dgt.isdigit())
+
         number = ''.join(ch for ch in ph if ch.isdigit())
         if len(number) != 12:
             raise PydanticCustomError(
