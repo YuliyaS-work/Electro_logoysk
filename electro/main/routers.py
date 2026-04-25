@@ -100,5 +100,3 @@ def get_cookie():
         {"name": "Политика cookie", "url": "https://electro-logoysk.by/cookie"}
     ]
     return render_template('cookie.html', breadcrumb_list=breadcrumb_list)
-
-
