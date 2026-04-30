@@ -6,11 +6,13 @@ from pydantic_core import PydanticCustomError
 
 
 class Feedback(BaseModel):
+
     name: str = Field(..., min_length=2, max_length=50, description="User name")
     phone: str = Field(..., description="PhoneNumber")
     email: EmailStr | None = Field(..., description="Email")
     subject: str | None = Field(..., description="Subject")
     message: str = Field(..., max_length=500, description="Message from user")
+
 
     @field_validator("name", mode="before")
     def validate_name(cls, v):
