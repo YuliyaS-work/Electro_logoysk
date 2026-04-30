@@ -45,7 +45,7 @@ def post_feedback():
 
         msg = Message(
             subject= f'{validated_data.subject} от {validated_data.name}, {validated_data.phone}, {validated_data.email}',
-            recipients=['yuliyasorokinawork@gmail.com', 'tanyakuharskaya@gmail.com'],
+            recipients=['electrologoysk@gmail.com'],
             body= f'{validated_data.message}'
         )
         mail.send(msg)
